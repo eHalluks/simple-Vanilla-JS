@@ -1,0 +1,77 @@
+<script>
+
+    let tblpoprawne = [];
+    let tblbledne = [];
+    let pytania = [];
+    let poprawneOdpy = [];
+    
+    let znak1 = 1; //dodawanie
+    let znak2 = 2; //odejmowanie
+    let znak3 = 3; //mnozenie
+    
+    
+    for(let i=0; i<3; i++) {
+    
+        let los1 = Math.floor((Math.random() * 5) + 1);
+        let los2 = Math.floor((Math.random() * 5) + 1);
+        let los3 = Math.floor((Math.random() * 3) + 1);
+    
+        let oblicz, mojaodp;
+    
+        //dodawanie
+    
+        if(los3 == 1) {
+            oblicz = los1 + los2;
+            console.log("Ile to jest?",los1, "+" ,los2);
+            mojaodp = parseInt(prompt("Podaj wynik"));
+            
+            pytania.push(`Ile to jest: ${los1} + ${los2} = ?`);
+            let wynik = los1 + los2;
+            poprawneOdpy.push(wynik);
+
+        }
+        else if (los3 == 2) {
+    
+            oblicz = los1 - los2;
+            console.log("Ile to jest?",los1, "-" ,los2);
+            mojaodp = parseInt(prompt("Podaj wynik"));
+            
+            pytania.push(`Ile to jest: ${los1} - ${los2} = ?`);
+            let wynik = los1 - los2;
+            poprawneOdpy.push(wynik);
+        }
+        else if (los3 == 3) {
+            oblicz = los1 * los2;
+            console.log("Ile to jest?",los1, "*" ,los2);
+            mojaodp = parseInt(prompt("Podaj wynik"));
+            
+            pytania.push(`Ile to jest: ${los1} * ${los2} = ?`);
+            let wynik = los1 * los2;
+            poprawneOdpy.push(wynik);
+        }
+    
+        if(mojaodp == oblicz) {
+            tblpoprawne.push(mojaodp);
+            tblbledne.push("");
+            
+        } else {
+            tblpoprawne.push("");
+            tblbledne.push(mojaodp);
+        }
+    
+    }
+    
+        for(let i=0; i<pytania.length; i++){
+    
+            console.log(pytania[i]);
+            if(tblpoprawne[i] != ""){
+                console.log(`Wynik twojego obliczenia to: ${tblpoprawne[i]}. Poprawna odpowiedź to: ${poprawneOdpy[i]} - brawo.`);
+            }
+            else{
+                console.log(`Wynik twojego obliczenia to: ${tblbledne[i]}. Poprawna odpowiedź to: ${poprawneOdpy[i]} - niestety, ta odpowiedź była błędna.`);
+            }
+    
+        }
+    
+                
+    </script>
