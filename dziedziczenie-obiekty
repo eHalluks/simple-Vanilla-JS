@@ -1,0 +1,46 @@
+<script>
+
+
+    class Produkt {
+
+        constructor(nazwa, cena){
+            this.nazwa = nazwa;
+            this.cena = cena;
+        }
+
+    }
+
+    class Oprogramowanie extends Produkt {
+
+        constructor(nazwa, cena, jezyk, system) {
+            super(nazwa, cena);
+            this.jezyk = jezyk;
+            this.system = system;
+        }
+    }
+
+    class Szkolenia extends Oprogramowanie{
+
+        constructor(nazwa, cena, jezyk, system, termin){
+            if(nazwa === "Linux"){
+                super(nazwa, cena, jezyk, "linux");    
+            } else {
+            super(nazwa, cena, jezyk, system);
+            }
+            this.termin = termin;
+        }
+
+
+    }
+
+    let nazwaszkolenia = prompt("Podaj nazwe szkolenia:");
+    let cena = prompt("Podaj cenę za szkolenie:");
+    let jezyk = prompt("W jakim języku:");
+    let system = prompt("Podaj na jakim systemie:");
+    let data = prompt("Podaj datę:");
+    let obj = new Szkolenia(nazwaszkolenia,cena,jezyk,system,data)
+
+    console.log(obj)
+
+
+</script>
