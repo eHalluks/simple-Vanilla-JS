@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prace domowe</title>
+    <script type="text/javascript" src="zmki.js"></script>
+</head>
+
+
+
+<body>
+
+    <h1 style="margin-left: 10vw; font-size: 4rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Zadania zaległe ze zjazdu 12.07.2022</h1>
+    <hr>
+
+    <!--
+
+    START zadanie 52-1
+
+    -->
+
+
+    <div class="wrapper1" style="margin-top: 1.5vw;margin-bottom: 1.5vw;text-align: center;">
+
+        <h2 style="padding-bottom:2vw;padding-top:2vw;">Zadanie 51-2</h2>
+
+        <button id="treszadpiecdwajeden" style="margin-bottom:1.5vw;padding: 1em">Tresc Zadania dla dev</button><br>
+
+        <article style="padding-bottom: 1.5vw;margin-left: 30%;margin-right: 30%;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"><span class="contentpiecdwajeden"></span></article>
+
+        <button id="pokaz" style="padding: 1em; margin-bottom: 20px;">pokaz rozwiązanie zadanie 52-1</button>
+
+        <p>Przed zmianą</p>
+        <p><span id="przedzmiana" style="padding: 1.5em;"></span></p>
+
+        <p>Po zmianie</p>
+        <p><span id="pozmianie"></span></p>
+    </div><br>
+
+    <hr>
+
+    <!--
+
+    KONIEC zadanie 52-1
+
+    -->
+
+    <!-- ############################################################################ -->
+
+
+    <!--
+
+        START Zadanie R6
+
+    -->
+
+    
+
+    <div class="wrapper2" style="margin-top: 1.5vw;margin-bottom: 1.5vw;text-align: center;">
+
+        <h2 style="padding-bottom:2vw;padding-top:2vw;">Zadanie R6</h2>
+
+        <button id="treszerszesc" style="margin-bottom:1.5vw;padding: 1em">Tresc Zadania dla dev</button><br>
+
+        <article style="padding-bottom: 1.5vw;margin-left: 30%;margin-right: 30%;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"><span class="contenterszesc"></span></article>
+
+        <button id="startpobieranie" style="padding: 1em;margin-bottom: 20px;">Rozpocznij pobieranie liczb</button>
+        
+        <p id="pobraneliczby" style="padding:0.5rem; margin-bottom: 1.5vw;" >Tu wyświetlone zostaną twoje liczby<span class="shownumbers"></span></p>
+        
+        <p style="padding:0.5rem; margin-bottom: 1.5vw;" ><span id="wynik"></span></p>
+
+        <button id="startodp" style="padding: 1em;margin-bottom: 20px;">Sprawdz odpowiedz</button>
+
+        <p><span id ="odp"></span></p>
+    </div>
+    <hr>
+
+
+    <!--
+
+    Koniec zadanie R6
+
+    -->
+
+    <!-- ############################################################################ -->
+
+    <!--
+
+    START zadanie R10
+
+    -->
+
+    <div class="wrapper3" style="margin-top: 1.5vw;margin-bottom: 1.5vw;text-align: center;">
+
+        <h2 style="padding-bottom:2vw;padding-top:2vw;">Zadanie R10</h2>
+
+        <button id="treszerdziesiec" style="margin-bottom:1.5vw;padding: 1em">Tresc Zadania dla dev</button><br>
+
+        <article style="padding-bottom: 1.5vw;margin-left: 30%;margin-right: 30%;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"><span class="contenterdziesiec"></span></article>
+
+        <button id="podajwynikdzialania"style="padding: 1em;margin-bottom: 20px;">Uruchom losowanie pytań</button>
+
+        <p style="margin-left:44%;margin-right:30%;text-align: left;"><span id="pyt1"></span></p>
+        <p style="margin-left:44%;margin-right:30%;text-align: left;"><span id="odpwlasciwa1"></span></p>
+        <p style="margin-left:46%;margin-right:30%;text-align: left;"><span id="twaodp1"></span></p>
+
+        <p style="margin-left:44%;margin-right:30%;text-align: left"><span id="pyt2"></span></p>
+        <p style="margin-left:44%;margin-right:30%;text-align: left;"><span id="odpwlasciwa2"></span></p>
+        <p style="margin-left:46%;margin-right:30%;text-align: left;"><span id="twaodp2"></span></p>
+
+        <p style="margin-left:44%;margin-right:30%;text-align: left"><span id="pyt3"></span></p>
+        <p style="margin-left:44%;margin-right:30%;text-align: left;"><span id="odpwlasciwa3"></span></p>
+        <p style="margin-left:46%;margin-right:30%;text-align: left;"><span id="twaodp3"></span></p>
+
+        <p style="padding:0.5rem; margin-bottom: 1.5vw;" ><span id="wynikipoprawne"></span></p>
+        
+
+        <p style="padding:0.5rem; margin-bottom: 1.5vw;" ><span id="wynikiniepoprawne"></span></p>
+
+    </div><br>
+    <hr>
+
+    <!--
+
+    KONIEC zadanie R10
+
+    -->
+
+    <!-- ############################################################################ -->
+
+    <!--
+
+    START zadanie R11
+
+    -->
+
+
+
+    <div class="wrapper4" style="margin-top: 1.5vw;margin-bottom: 1.5vw;text-align: center;">
+
+        <h2 style="padding-bottom:2vw;padding-top:2vw;">Zadanie R11</h2>
+        
+        <button id="trescerjedenascie" style="margin-bottom:1.5vw;padding: 1em">Tresc Zadania dla dev</button><br>
+        
+        <article style="padding-bottom: 1.5vw;margin-left: 30%;margin-right: 30%;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"><span class="contententjedenascie"></span></article>
+
+        <button id="uruchompodawajke"style="padding: 1em;margin-bottom: 20px;">Uruchom podawanie liczb</button>
+
+        <p><span class="suma"style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="min" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align: left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="max" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align: left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="parzyste" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align: left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="nieparzyste" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align: left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="wiekszeOdZera" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align: left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="mniejszeOdZera" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align: left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="srednia" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align: left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="iloscprowadzonych" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="wszystkowyswietl" style="padding-bottom: 1.5vw;margin-left:30%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="wszystkowyswiet2" style="padding-bottom: 1.5vw;margin-left:25%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="wszystkowyswiet3" style="padding-bottom: 1.5vw;margin-left:25%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <hr style="margin-top: 2.5vw;">
+
+    <!--
+
+    KONIEC zadanie R11
+
+    -->
+
+    <!-- ############################################################################ -->
+
+    <!--
+
+    START zadanie 37-3
+
+    -->
+
+    <div class="wrapper5" style="margin-top: 1.5vw;margin-bottom: 1.5vw;text-align: center;">
+
+        <h2 style="padding-bottom:2vw;padding-top:2vw;">Zadanie 37-3</h2>
+        
+        <button id="tresczadaniarun" style="margin-bottom:1.5vw;padding: 1em">Tresc Zadania dla dev</button><br>
+
+        <article style="padding-bottom: 1.5vw;margin-left: 30%;margin-right: 30%;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"><span class="contenttrzysiedemtrzy"></span></article>
+
+        <button id="liczprostokat" style="margin-bottom:1.5vw;padding: 1em">Oblicz prostokąt</button><br>
+
+        <!-- dane o figurze   -->
+
+        <p><span class="firstsiderectangle"style="padding-bottom: 1.5vw;margin-left:25%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="secondsiderectangle"style="padding-bottom: 1.5vw;margin-left:25%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+        <!-- wybor usera -->
+
+        <p><span class="choisetheuser"style="padding-bottom: 1.5vw;margin-left:25%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+        <!-- obliczenia -->
+
+        <p><span class="arearectangle"style="padding-bottom: 1.5vw;margin-left:25%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="circumferencerectangle"style="padding-bottom: 1.5vw;margin-left:25%;margin-right:30%;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+        <hr style="margin-top: 2.5vw;">
+
+    <!--
+
+    KONIEC zadanie 37-3
+
+    -->
+
+    <!-- ############################################################################ -->
+
+    <!--
+
+    START zadanie 37-4
+
+    -->
+
+    <div class="wrapper6" style="margin-top: 1.5vw;margin-bottom: 1.5vw;text-align: center;"></div>
+
+    <h2 style="padding-bottom:2vw;padding-top:2vw;">Zadanie 37-4</h2>
+
+    <button id="tresczadaniarundwa" style="margin-bottom:1.5vw;padding: 1em">Tresc Zadania dla dev</button><br>
+
+    <article style="padding-bottom: 1.5vw;margin-left: 30%;margin-right: 30%;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"><span class="contenttrzysiedemcztery"></span></article>
+
+    <button id="wybierzfigure" style="margin-bottom:1.5vw;padding: 1em">Wybierz i oblicz</button><br>
+
+    <!-- trojkat -->
+
+    <p><span class="dlugoscpodstawy"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <p><span class="wysokosctrojkata"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <p><span class="obliczeniapolatrojkata"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <!-- prostokat -->
+
+    <p><span class="dlugoscBokuA"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <p><span class="dlugoscBokuB"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <p><span class="obliczeniaPolaProstokata"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <hr style="margin-top: 2.5vw;">
+
+    <!--
+
+    KONIEC zadanie 37-4
+
+    -->
+
+    <!-- ############################################################################ -->
+
+    <!--
+
+    START zadanie 46-3
+
+    -->
+
+    <div class="wrapper7" style="margin-top: 1.5vw;margin-bottom: 1.5vw;text-align: center;"></div>
+
+    <h2 style="padding-bottom:2vw;padding-top:2vw;">Zadanie 46-3</h2>
+
+    <button id="tresczteryszesctrzy" style="margin-bottom:1.5vw;padding: 1em">Tresc Zadania dla dev</button><br>
+
+    <article style="padding-bottom: 1.5vw;margin-left: 30%;margin-right: 30%;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"><span class="contentczteryszczesctrzy"></span></article>
+
+    <!-- zadanie -->
+
+    <button id="uruchomwzrost" style="margin-bottom:1.5vw;padding: 1em">Podaj wzrost</button><br>
+
+    <p><span class="tocowpisal"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <p><span class="lowgrowth"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+    <p><span class="ciekawostkaniski"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+
+    <p><span class="middlegrowth"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+    <p><span class="ciekawostkasredni"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+
+    <p><span class="highgrowth"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+    <p><span class="ciekawostkawysoki"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <hr style="margin-top: 2.5vw;">
+
+    </div>
+</div>
+
+
+    <!--
+
+    KONIEC zadanie 46-3
+
+    -->
+
+    <!-- 
+            #######################################################
+            #######################################################
+            #######################################################
+            #######################################################
+            #######################################################
+            #######################################################
+            #######################################################
+
+            KONIEC ZALEGŁYCH
+
+            #######################################################
+            #######################################################
+            #######################################################
+            #######################################################
+            #######################################################
+            #######################################################
+
+
+    -->
+
+    <!-- ZADANIE 26-1 -->
+
+    <h1 style="margin-left: 10vw; font-size: 4rem; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Zadania ze zjazdu 25.07.2022</h1><hr>
+
+
+    <div class="wrapper8" style="text-align: center;margin-bottom: 1.5vw;">
+
+    <h2 style="padding-bottom:2vw;padding-top:2vw;text-align: center;">Zadanie 26-1</h2>
+
+    <button id="trescdwaczescjeden" style="margin-bottom:1.5vw;padding: 1em;">Tresc zadania dla Dev</button><br>
+
+    <article><span class="opisdwaszescjeden"style="margin-bottom: 2.5vw;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></article>
+
+    <button id="generujliczby" style="margin-bottom:1.5vw;padding: 1em;margin-top: 1.5vw;">Generuj liczby</button><br>
+
+    <p><span class="typeofsortHigh" style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+    <p><span class="viewnumbers"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    <p><span class="typeofsortlow" style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+    <p><span class="viewnumberst2"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    </div>
+    <hr style="margin: top 1.5vw;">
+
+    <!-- ZADANIE 26-3 -->
+
+    <div class="wrapper9" style="text-align: center;margin-bottom: 1.5vw;">
+
+    <h2 style="padding-bottom:2vw;padding-top:2vw;text-align: center;">Zadanie 26-3</h2>
+
+    <button id="trescdwaczesctrzy" style="margin-bottom:1.5vw;padding: 1em;">Tresc zadania dla Dev</button><br>
+
+    <article><span class="opisdwaszesctrzy"style="margin-bottom: 2.5vw;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></article>
+
+    <button id="runmath" style="margin-bottom:1.5vw;padding: 1em;margin-top: 1.5vw;">Uruchom obliczenia</button><br>
+
+    <p><span class="prezentacjawyrazen"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    </div>
+    <hr style="margin: top 1.5vw;">
+
+    <!-- ZADANIE 26-12 -->
+
+    <div class="wrapper10" style="text-align: center;margin-bottom: 1.5vw;">
+
+        <h2 style="padding-bottom:2vw;padding-top:2vw;text-align: center;">Zadanie 26-12</h2>
+    
+        <button id="trescdwaszescjedendwa" style="margin-bottom:1.5vw;padding: 1em;">Tresc zadania dla Dev</button><br>
+    
+        <article><span class="opisdwaszescjedendwa"style="margin-bottom: 2.5vw;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></article>
+
+        <button id="zadaniedwaszescjedendwa" style="margin-bottom:1.5vw;padding: 1em;margin-top: 1.5vw;">Podaj slowo</button><br>
+
+        <p><span class="wprowadzoneslowo"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:20px;"></span></p>
+
+        <p><span class="upoWprowadzoneslowo"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+
+    </div>
+    <hr style="margin: top 1.5vw;">
+
+    <!-- ZADANIE 66-5 -->
+
+    <div class="wrapper11" style="text-align: center;margin-bottom: 1.5vw;">
+
+        <h2 style="padding-bottom:2vw;padding-top:2vw;text-align: center;">Zadanie 66-5</h2>
+    
+        <button id="trescszescszescpiec" style="margin-bottom:1.5vw;padding: 1em;">Tresc zadania dla Dev</button><br>
+    
+        <article><span class="opisszescszescpiec"style="margin-bottom: 2.5vw;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></article>
+
+        <button id="zadanieszescszescpiec" style="margin-bottom:1.5vw;padding: 1em;margin-top: 1.5vw;">Wylosuj numery dla tablic</button><br>
+        
+
+        <p><span class="oznaczeniedlaciagu"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="wylosowaneTab1"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+        <p><span class="wylosowaneTab2"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p><br>
+
+        <p><span class="najwiekszawspolna"style="padding-bottom: 1.5vw;text-align:left;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></p>
+    
+    </div>
+    <hr style="margin: top 1.5vw;">
+
+<!-- ZADANIE 67-1 -->
+
+    <div class="wrapper12" style="text-align: center;margin-bottom: 1.5vw;">
+
+        <h2 style="padding-bottom:2vw;padding-top:2vw;text-align: center;">Zadanie 67-1</h2>
+    
+        <button id="trescszescsiedemjeden" style="margin-bottom:1.5vw;padding: 1em;">Tresc zadania dla Dev</button><br>
+    
+        <article><span class="opisSzescSiedemJeden"style="margin-bottom: 2.5vw;text-align: justify;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 20px;"></span></article>
+        <hr style="margin-left:20%;margin-right:20%;margin-top: 1.5vw;">
+
+        <style>
+	
+            body{
+                line-height:25px;
+            }
+            
+            table{
+                margin:0 auto;
+                width:60%;
+            }
+            
+            .podsumowanie{
+                vertical-align:top;
+                line-height:90px;
+                font-size:25px;
+                text-align:left;
+                width:75%;
+            }
+            
+            .podsumowanie span{
+                font-weight:bold;
+            }
+            
+            .error{
+                color:red;
+            }
+        
+        </style>
+	
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <h1>Formularz aplikacyjny</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            
+                <form>	
+                    <b>Imie</b><br>
+                    <input type="text" name="imie">
+                    <span class="error" id="error_imie"></span>
+                    <br><br>
+                    <b>Nazwisko</b><br>
+                    <input type="text" name="nazwisko">
+                    <span class="error" id="error_nazwisko"></span>
+                    <br><br>
+                    <b>Miejsce pracy</b><br>
+                    <select name="miasto">
+                        <option value="">-- wybierz --</option>
+                        <option value="Warszawa">Warszawa</option>
+                        <option value="Kraków">Kraków</option>
+                        <option value="Katowice">Katowice</option>
+                        <option value="Poznań">Poznań</option>
+                    </select> <span class="error" id="error_miasto"></span>
+                    <br><br>
+                    <b>Znajomość technologii</b> <span class="error" id="error_technologia"></span><br>
+                    <input type="checkbox" name="tech1" value="JavaScript"> JavaScript <br>
+                    <input type="checkbox" name="tech2" value="PHP"> PHP <br>
+                    <input type="checkbox" name="tech3" value="SQL"> SQL <br>
+                    <input type="checkbox" name="tech4" value="JAVA"> JAVA 
+                    <br><br>
+                    <b>Aplikowanie na stanowisko</b> <span class="error" id="error_stanowisko"></span><br>
+                    <input type="radio" name="stanowisko" value="Młodszy programista"> Młodszy programista <br>
+                    <input type="radio" name="stanowisko" value="Stażysta"> Stażysta <br>
+                    <input type="radio" name="stanowisko" value="Starszy programista"> Starszy programista <br>
+                    <input type="radio" name="stanowisko" value="Administrator"> Administrator 
+                    <br><br>
+                    <b>Dodatkowe uwagi</b><br>
+                    <textarea name="uwagi"></textarea>
+                    <br><br>
+                    <input type="button" value="Wyślij" style="margin-bottom:1.5vw;padding: 1em;margin-top: 1.5vw;">
+                </form>
+            
+            
+            </td>
+            <td class="podsumowanie">
+            
+            Imię: <span id="imie"></span>
+            <br>
+            Nazwisko: <span id="nazwisko"></span>
+            <br>
+            Miejsce pracy: <span id="miasto"></span>
+            <br>
+            Znajomość technologii: <span id="technologie"></span>
+            <br>
+            Aplikowanie na stanowisko: <span id="stanowisko"></span>
+            <br>
+            Dodatkowe uwagi: <span id="uwagi"></span>
+            <br>
+            
+            </td>
+        </tr>
+        </table>
+
+</div>
+<hr style="margin: top 1.5vw;">
+
+
+
+
+</body>
+</html>
+
+    <!-- ############################################################################ -->
+    
+//WYWOLANIE FUNKCJE START $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    //alert("javascript test")
+
+    //START ZADANIE 52-1
+
+	document.querySelector("button#treszadpiecdwajeden").onclick = function(){
+        
+        myfunfivetwoone();
+    }
+
+    document.querySelector("button#pokaz").onclick = function(){
+        
+        myfundwa_fivetwoone();
+    }
+
+    //KONIEC ZADANIA 52-1
+
+
+    //START ZADANIE R6
+
+    document.querySelector("button#treszerszesc").onclick = function(){
+    myfunerszesctresc();
+    }
+
+    document.querySelector("button#startpobieranie").onclick = function(){
+        myfunerszesc();
+    }
+
+    document.querySelector("button#startodp").onclick = function(){
+        myfunerszescdodatek();
+    }
+
+
+    //KONIEC ZADANIE R6
+
+    //START ZADANIE R10
+
+        document.querySelector("button#treszerdziesiec").onclick = function(){
+            myfuntreszerdziesiec();
+            }
+        
+        document.querySelector("button#podajwynikdzialania").onclick = function(){
+
+            myfunpodajwynikdzialania();
+        }
+        
+    //KONIEC ZADANIE R10
+
+    //START ZADANIE R11
+
+    document.querySelector("button#trescerjedenascie").onclick = function(){
+
+        myfuntreszerjedenascie();
+
+        }
+    document.querySelector("button#uruchompodawajke").onclick = function(){
+
+        myfunuruchompodawajke();
+    
+    }
+        
+    //KONIEC ZADANIE R11   
+
+
+    //START ZADANIA 37-3
+
+    document.querySelector("button#tresczadaniarun").onclick = function(){
+
+        myfuntrzysiedemtrzy();
+
+        }
+
+    document.querySelector("button#liczprostokat").onclick = function(){
+
+        myfuntrzysiedemtrzyzadanie();
+
+    }
+
+    //KONIEC ZADANIA 37-3
+
+
+        //START ZADANIA 37-3
+
+        document.querySelector("button#tresczadaniarundwa").onclick = function(){
+
+            myfuntrzysiedemcztery();
+    
+            }
+    
+        document.querySelector("button#wybierzfigure").onclick = function(){
+    
+            myfuntrzysiedemczteryzadanie();
+    
+        }
+    
+        //KONIEC ZADANIA 37-3
+
+
+        //START ZADANIE 46-3
+
+        document.querySelector("button#tresczteryszesctrzy").onclick = function(){
+
+            myfuntrescczteryszesctrzy();
+    
+            }
+    
+        document.querySelector("button#uruchomwzrost").onclick = function(){
+    
+            myfunzadanieczteryszesctrzy();
+    
+        }
+
+
+        //KONIEC ZADANIE 46-3
+
+
+// #######################################################
+// #######################################################
+// #######################################################
+// #######################################################
+
+//KONIEC ZALEGŁYCH
+
+// #######################################################
+// #######################################################
+// #######################################################
+
+//NOWY ROZDZIAŁ
+
+// START ZADANIE 26-1
+
+document.querySelector("button#trescdwaczescjeden").onclick = function(){
+
+    myfuntrescdwaszescjeden();
+
+    }
+
+document.querySelector("button#generujliczby").onclick = function(){
+
+    myfunzadaniedwaszescjeden();
+
+}
+
+// KONIEC ZADANIE 26-1
+
+// START ZADANIE 26-3
+
+document.querySelector("button#trescdwaczesctrzy").onclick = function(){
+
+    myfuntrescdwaszesctrzy();
+
+    }
+
+document.querySelector("button#runmath").onclick = function(){
+
+    myfunzadaniedwaszesctrzy();
+
+}
+
+
+//KONIEC ZADANIE 26-3
+
+//POCZĄTEK ZADANIE 26-12
+
+document.querySelector("button#trescdwaszescjedendwa").onclick = function(){
+
+    myfuntrescdwaszescjedendwa();
+
+    }
+
+document.querySelector("button#zadaniedwaszescjedendwa").onclick = function(){
+
+    myfunzadaniedwaszescjedendwa();
+
+}
+
+//KONIEC ZADANIE 26-12
+
+
+//POCZĄTEK ZADANIE 66-5
+
+document.querySelector("button#trescszescszescpiec").onclick = function(){
+
+    myfuntrescszescszescpiec();
+
+    }
+
+document.querySelector("button#zadanieszescszescpiec").onclick = function(){
+
+    myfunzadanieszescszescpiec();
+
+}
+
+//KONIEC ZADANIE 66-5
+
+
+
+//START ZADANIE 67-1
+
+document.querySelector("button#trescszescsiedemjeden").onclick = function(){
+
+    myfuntrescSzescSiedemJeden();
+
+    }
+
+	document.querySelector("input[type='button']").onclick = function(){
+
+        myfunZadanieSzescSiedemJeden();
+    }
+
+
+//KONIEC ZADANIE 67-1
+
+
+
+
+
+
+    });
+
+//WYWOLANIE FUNKCJE KONIEC $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+/*
+________________________________________________
+
+ZAWARTOŚĆ FUNCJI START
+________________________________________________
+
+*/
+
+
+/*
+
+#######################################################
+
+POCZATEK ZADANIA 52-1
+
+#######################################################
+
+*/
+
+myfunfivetwoone = () => {
+
+    let tresczadaniapiecdwajeden = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Utwórz zmienne, zgodnie z treścią:(zm1=SUKCES; zm2=występuje; zm3=WYSIŁKIEM; zm4 =gdzie; zm5 =przed; zm6 =słownik; zm7 =jest; zm8 =Jedynym; zm9 =miejscem)a nastepnie ulóż zdanie: Jedynym miejscem gdzie SUKCES wystepuje przed WYSYŁKIEM jest słownik"
+
+    document.querySelector('.contentpiecdwajeden').innerHTML = tresczadaniapiecdwajeden;
+}
+
+
+myfundwa_fivetwoone = () => {
+
+
+    let zm1 = "SUKCES";
+    let zm2 = "występuje";
+    let zm3 = "WYSIŁKIEM";
+    let zm4 = "gdzie";
+    let zm5 = "przed";
+    let zm6 = "słownik";
+    let zm7 = "jest";
+    let zm8 = "Jedynym";
+    let zm9 = "miejscem";
+    let pomoc = "";
+    
+    let wyswietlanie = [zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9]
+
+    document.querySelector('#przedzmiana').innerHTML = wyswietlanie;
+
+
+    //Jedynym miejscem gdzie SUKCES występuje przed WYSIŁKIEM jest słownik
+    //zm8, zm9, zm4, zm1, zm2, zm5, zm3, zm7, zm6
+
+    //## = container
+    //P-pomoc
+    //E-empty_container
+
+    pomoc = zm1; //P-sukces
+    
+    zm1 = zm8; //e-zm8 ## ________ jedynym
+    
+    zm8 = pomoc; //SUKCES
+    
+    pomoc = zm2; //p-występuje
+    
+    zm2 = zm9;//e-zm9 ## ________ miejscem
+    
+    zm9 = pomoc;//WYSTĘPUJE
+
+    pomoc = zm3; //P-wysiłkiem
+
+    zm3 = zm4;//e-zm4 ## ________ gdzie
+
+    zm4 = zm8;//e-zm8 ## ________ SUKCES
+
+    zm8 = pomoc //wysiłkiem
+
+    pomoc = zm5; //p-przed
+
+    zm5 = zm9;//e-zm9 ## ________ wystepuje
+
+    zm9 = pomoc; //przed
+
+    pomoc = zm6;//p-slownik
+
+    zm6 = zm9; //e-zm9 ## ________ przed
+
+    zm9 = pomoc; //slownik
+
+    pomoc = zm7;
+
+    zm7 = zm8;  //e-zm8 ## ________ wysilkiem
+
+    zm8 = pomoc; // ## ________ wysilkiem
+    
+    let wyswietlania2 = [zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9];
+
+    document.querySelector("#pozmianie").innerHTML = wyswietlania2;
+}
+
+/*
+#######################################################
+
+KONIEC ZADANIA 52-1
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*/
+
+
+
+/*
+
+#######################################################
+
+POCZATEK ZADANIA R6
+
+#######################################################
+
+*/
+
+myfunerszesctresc = () => {
+
+    let treszerszesc = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Ktoś podaje pięć liczb jakichkolwiek, a program ma obliczyć sumę ale !!!UWAGA!!!: tylko liczb P.A.R.Z.Y.S.T.Y.C.H !!!!!"
+
+    document.querySelector('.contenterszesc').innerHTML = treszerszesc;
+
+}
+
+
+myfunerszesc = () => {
+
+    alert("Za chwilę podasz pięć losowych liczb całkowitych. Spróbuj odgadnąć dla jakich liczb program wykonał sumę. Aby przerwać wprowadź 000")
+
+    let suma = 0;
+    let liczby =[];
+    let flaga = false;
+
+    for(let i=0; i<=5;i++) {
+        let podajliczbe = parseInt(prompt("Twoja liczba"));
+        if(podajliczbe == 000) {
+            flaga = true;
+            break;
+        }
+        liczby.push(podajliczbe)
+        if(podajliczbe % 2 === 0) {
+            suma += podajliczbe
+        }
+    }
+
+    if(flaga == false) {
+        document.querySelector("#pobraneliczby").innerHTML = "Twoje liczby to: "+"["+liczby+"]";
+        document.querySelector("#wynik").innerHTML = "Suma podanych przez ciebie liczb wynosi: "+suma+";";
+    } else {
+        document.querySelector("#pobraneliczby").innerHTML = "Nic nie podałeś";
+        document.querySelector("#wynik").innerHTML = "To nic nie obliczyłem :-)";
+    }
+
+
+}
+
+myfunerszescdodatek = () => {
+
+        let odpowiedz = parseInt(prompt("Podaj odpowiedź: << 1-Podzielne przez 2 >>, << 2-niepodzielne przez 2 >>; << 3-inne >>"))
+        ;
+
+        if(odpowiedz === 1) {
+        let odptrue = "Brawo, to jest poprawna odpowiedź"
+        document.querySelector("#odp").innerHTML = odptrue;
+        } else {
+            let odpfalse = ("Niestety, to nie jest poprawna odpowiedź. Właściwa odpowiedź to podzielne przez 2")
+            document.querySelector("#odp").innerHTML = odpfalse;
+        }
+}
+
+
+
+/*
+
+#######################################################
+
+KONIEC ZADANIA R6
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+*/
+
+
+
+/*
+
+#######################################################
+
+START ZADANIE R10
+
+#######################################################
+
+*/
+
+myfuntreszerdziesiec = () => {
+
+    let treszerdziesiec = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Program ma losować liczby od (1 do 10) i od razu ma losować znaki takie jak: (+, -, *). Konstrukcja działania ma być prezentowana userowi z pytaniem jaka jest odpowiedź. Po udzielniu wszystkich odpowiedzi program ma prezentować dane podzielone na odpowiedzi poprawne i nie poprawne."
+
+    document.querySelector('.contenterdziesiec').innerHTML = treszerdziesiec;
+
+}
+
+
+
+
+myfunpodajwynikdzialania = () => {
+
+
+    let tblpoprawne = [];
+    let tblbledne = [];
+    let pytania = [];
+    let tblwlasciwaodp = [];
+    let tbltwojaodpowiedz = [];
+
+    let zestawpoprawnych = new Map();
+    let zestawblednych = new Map();
+    let licznikpop = 0;
+    let licznikniepop = 0;
+    
+    
+    let znak1 = 1; //dodawanie
+    let znak2 = 2; //odejmowanie
+    let znak3 = 3; //mnozenie
+    
+    
+    for(let i=0; i<3; i++) {
+    
+        let los1 = Math.floor((Math.random() * 5) + 1);
+        let los2 = Math.floor((Math.random() * 5) + 1);
+        let los3 = Math.floor((Math.random() * 3) + 1);
+    
+        let oblicz, mojaodp;
+    
+    
+        if(los3 == 1) {
+            oblicz = los1 + los2;
+            tblwlasciwaodp.push(oblicz);
+            mojaodp = parseInt(prompt(`Ile to jest? ${los1} + ${los2}`));
+            pytania.push(`Ile to jest: ${los1} + ${los2} = ?`);
+            tbltwojaodpowiedz.push(mojaodp);
+        }
+        else if (los3 == 2) {
+            oblicz = los1 - los2;
+            tblwlasciwaodp.push(oblicz);
+            mojaodp = parseInt(prompt(`Ile to jest? ${los1} - ${los2}`));
+            pytania.push(`Ile to jest: ${los1} - ${los2} = ?`);
+            tbltwojaodpowiedz.push(mojaodp);
+        }
+        else if (los3 == 3) {
+            oblicz = los1 * los2;
+            tblwlasciwaodp.push(oblicz);
+            mojaodp = parseInt(prompt(`Ile to jest? ${los1} * ${los2}`));
+            pytania.push(`Ile to jest: ${los1} * ${los2} = ?`);
+            tbltwojaodpowiedz.push(mojaodp);
+        }
+        
+        if(mojaodp == oblicz) {
+            tblpoprawne.push(mojaodp);
+            tblbledne.push("");
+            
+        } else {
+            tblpoprawne.push("");
+            tblbledne.push(mojaodp);
+        }
+    
+    }
+
+    for(let i=0; i<pytania.length; i++){
+        console.log(pytania[i]);
+        if(tblpoprawne[i] != ""){
+            console.log("Twoje poprawne odpowiedzi to " +tblpoprawne[i]);
+            zestawpoprawnych.set(pytania[i],tblpoprawne[i]);
+            licznikpop++
+        }
+        else{
+            console.log("Twoje błędne odpowiedzi to " +tblbledne[i]);
+            zestawblednych.set(pytania[i], tblbledne[i]);
+            licznikniepop++
+    }
+
+    
+    console.log(zestawpoprawnych.get(pytania[i]))
+    console.log(zestawblednych.get(pytania[i]))
+    
+}
+
+console.log(tblwlasciwaodp)
+
+document.querySelector('#pyt1').innerHTML ="Pytanie pierwsze: "+pytania[0];
+document.querySelector('#odpwlasciwa1').innerHTML ="Właściwa odpowiedź to: "+tblwlasciwaodp[0];
+document.querySelector('#twaodp1').innerHTML ="Twoja odpowiedź: "+tbltwojaodpowiedz[0];
+
+document.querySelector('#pyt2').innerHTML ="Pytanie drugie: "+pytania[1];
+document.querySelector('#odpwlasciwa2').innerHTML ="Właściwa odpowiedź to: "+tblwlasciwaodp[1];
+document.querySelector('#twaodp2').innerHTML ="Twoja odpowiedź: "+tbltwojaodpowiedz[1];
+
+document.querySelector('#pyt3').innerHTML ="Pytanie i trzecie: "+pytania[2];
+document.querySelector('#odpwlasciwa3').innerHTML ="Właściwa odpowiedź to: "+tblwlasciwaodp[2];
+document.querySelector('#twaodp3').innerHTML ="Twoja odpowiedź: "+tbltwojaodpowiedz[2];
+
+}
+
+
+
+/*
+
+#######################################################
+
+KONIEC ZADANIA R10
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+*/
+
+
+/*
+
+#######################################################
+
+START ZADANIE R11
+
+#######################################################
+
+*/
+
+
+myfuntreszerjedenascie = () => {
+
+    let trescerjedenascie = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Znowu program pobiera od usera 5 liczb na koncu user podaje 0 ale to nie wlicza sie do calosci. Wyswietl sume, max, min ilosc parz, ilosc nie parz, srednia arytm, i na koniec wypisz wszystkie wartosci."
+
+    document.querySelector('.contententjedenascie').innerHTML = trescerjedenascie;
+
+}
+
+myfunuruchompodawajke = () => {
+
+    alert("Podaj tyle ile chcesz liczb całkowitych od ujemnych do dodatnich. Aby zakończyć podawanie wprowadź liczbę 0")
+
+    let licznik = 0;
+    let tab1 = [];
+    let wajha = true;
+    let min;
+    let max0;
+    let suma = 0;
+    let srednia;
+    let licznikparzystych = 0;
+    let liczniknieprzystych = 0;
+    let licznikwiekszeodzera = 0;
+    let licznikmniejszeodzera = 0;
+    let tab1posortowane = [];
+    
+
+    do{
+        let prPliczby = parseInt(prompt("Aby zakończyć wprowadź 0"));
+        if(prPliczby == 0){
+            break;
+        }
+        if(licznik == 0) {
+            min = prPliczby;
+            max = prPliczby;
+        }else if (prPliczby > max) {
+            max = prPliczby
+        } else if (prPliczby < min) {
+            min = prPliczby
+        }
+
+        if(prPliczby % 2 == 0) {
+            licznikparzystych++
+        } else if(prPliczby % 2 != 0) {
+            liczniknieprzystych++
+        }if(prPliczby < 0) {
+            licznikmniejszeodzera++
+        }else if(prPliczby > 0) {
+            licznikwiekszeodzera++
+        }
+        licznik++
+        suma += prPliczby
+        tab1.push(prPliczby);
+
+    } while(true);
+
+    srednia = suma / licznik
+
+
+    document.querySelector('.suma').innerHTML = "Suma liczba: "+suma;
+    document.querySelector('.min').innerHTML = "Wartość min: "+min;
+    document.querySelector('.max').innerHTML = "Wartość max: "+max;
+    document.querySelector('.parzyste').innerHTML = "Ilość parzystych: "+licznikparzystych;
+    document.querySelector('.nieparzyste').innerHTML ="Ilość nie parzystych: "+liczniknieprzystych;
+    document.querySelector('.wiekszeOdZera').innerHTML ="Ilość większych od zera: "+licznikwiekszeodzera;
+    document.querySelector('.mniejszeOdZera').innerHTML ="Ilość mniejszych od zera: "+licznikmniejszeodzera;
+    document.querySelector('.srednia').innerHTML ="Średnia arytmetyczna: "+srednia;
+    document.querySelector('.iloscprowadzonych').innerHTML ="Ilość wprowadzonych ogółem: "+licznik;
+    document.querySelector('.wszystkowyswietl').innerHTML ="Nie uporządkowane Wartości jakie wprowadzono: "+tab1;
+
+    for(let i = 0; i < tab1.length -1; i++){
+        for(let j=i+1; j < tab1.length; j++){
+            if(tab1[i] > tab1[j]) {
+                let pomoc;
+                pomoc = tab1[i]
+                tab1[i] = tab1[j];
+                tab1[j] = pomoc; 
+            }
+        }
+    }
+
+    document.querySelector('.wszystkowyswiet2').innerHTML ="Uporządkowane od najmniejszego wartości jakie wprowadzono: "+tab1;
+
+    for(let i = 0; i < tab1.length -1; i++){
+        for(let j=i+1; j < tab1.length; j++){
+            if(tab1[i] < tab1[j]) {
+                let pomoc;
+                pomoc = tab1[i]
+                tab1[i] = tab1[j];
+                tab1[j] = pomoc; 
+            }
+        }
+    }
+
+    document.querySelector('.wszystkowyswiet3').innerHTML ="Uporządkowane od największego wartości jakie wprowadzono: "+tab1;
+    
+    
+    console.log("Suma:",suma);
+    console.log("Min:",min);
+    console.log("Max:",max);
+    console.log("Parzyste ",licznikparzystych);
+    console.log("Nieparzyste: ",liczniknieprzystych);
+    console.log("Ilość wiekszych od zera: ",licznikwiekszeodzera);
+    console.log("Ilość mniejszych od zera: ",licznikmniejszeodzera);
+    console.log("Średnia: ",srednia);
+    console.log("Ilość wprowadzonych liczb:",licznik);
+    console.log(tab1);
+}
+/*
+
+#######################################################
+
+KONIEC ZADANIA R11
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+*/
+
+/*
+
+#######################################################
+
+START ZADANIE 37_3
+
+#######################################################
+
+*/
+
+myfuntrzysiedemtrzy = () => {
+
+    let trzysiedemtrzy = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Napisz program który policzy pole lub obwód prostokąta."
+
+    document.querySelector('.contenttrzysiedemtrzy').innerHTML = trzysiedemtrzy;
+
+}
+
+myfuntrzysiedemtrzyzadanie = () => {
+
+
+alert("Coś będziemy liczyć. Dowiesz się już za chwilę. Podążaj za komunikatami. Zaczynamy!");
+
+let wartosc1 = parseInt(prompt("Ile wynosi pierwszy bok prostokąta?"));
+document.querySelector('.firstsiderectangle').innerHTML = "Podana wartość boku x: "+wartosc1+"cm";
+
+let wartosc2 = parseInt(prompt("Ile wynosi drugi bok prostokąta?"));
+document.querySelector('.secondsiderectangle').innerHTML = "Podana wartość boku y: "+wartosc2+"cm";
+
+let userchoises = parseInt(prompt("Wybierz co chcesz policzyć: 1-Pole, 2-obwód"));
+
+if(userchoises == 1){
+    document.querySelector('.choisetheuser').innerHTML 
+    ="Wybrałeś: "+userchoises+". Będziemy liczyć pole.";
+} else {
+    document.querySelector('.choisetheuser').innerHTML 
+    ="Wybrałeś: "+userchoises+". Będziemy liczyć obwód.";
+}
+
+let obliczeniaPola = null;
+let obliczeniaObwodu = null;
+
+if(userchoises == 1) {
+    obliczeniaPola = wartosc1 * wartosc2;
+    document.querySelector('.arearectangle').innerHTML 
+    ="Pole prostokąta wynosi: "+obliczeniaPola+"cm";
+}
+
+if (userchoises == 2) {
+    obliczeniaObwodu = 2 *(wartosc1 + wartosc2);
+    document.querySelector('.circumferencerectangle').innerHTML ="Obwód prostokąta wynosi: "+obliczeniaObwodu+"cm";
+}
+
+}
+
+/*
+
+#######################################################
+
+KONIEC ZADANIA 37_3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+*/
+
+
+
+/*
+
+#######################################################
+
+START ZADANIE 37_4
+
+#######################################################
+
+*/
+
+myfuntrzysiedemcztery = () => {
+
+    let trzysiedemcztery = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Napisz program który policzy pole figury którą wybierze user."
+
+    document.querySelector('.contenttrzysiedemcztery').innerHTML = trzysiedemcztery;
+
+}
+
+myfuntrzysiedemczteryzadanie = () => {
+
+    let coChceLiczyc = prompt("Liczymy pole figury. Podaj jedną z dwóch figór: trójkąt lub prostokąt")
+    let odpowiedz = coChceLiczyc;
+    
+    if(odpowiedz == "trójkąt") {
+
+        let dlPodstawy = parseInt(prompt("Długość podstawy:"));
+        document.querySelector('.dlugoscpodstawy').innerHTML = "Długość podstawy trójkąta: "+dlPodstawy+"cm";
+
+        let wysTrój = parseInt(prompt("Wysokość trójkąta;"));
+        document.querySelector('.wysokosctrojkata').innerHTML = "Wysokość trójkąta: "+wysTrój+"cm";
+
+        let obliczeniaDlWys = dlPodstawy * wysTrój / 2;
+        document.querySelector('.obliczeniapolatrojkata').innerHTML = "Pole trójkąta wynosi: "+obliczeniaDlWys+"cm";
+
+        
+    }else if(odpowiedz == "prostokąt") {
+        let dlBokuA = parseInt(prompt("Długość boku a:"))
+        document.querySelector('.dlugoscBokuA').innerHTML = "Długość boku a: "+dlBokuA+"cm";
+
+        let dlBokuB = parseInt(prompt("Długość boku b:"))
+        document.querySelector('.dlugoscBokuB').innerHTML = "Długość boku b: "+dlBokuB+"cm";
+
+        let obliczeniaAb = dlBokuA * dlBokuB;
+        document.querySelector('.obliczeniaPolaProstokata').innerHTML = "Pole prostokąta wynosi: "+obliczeniaAb+"cm";
+    }
+}
+
+
+
+/*
+
+#######################################################
+
+KONIEC ZADANIA 37_4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+*/
+
+
+/*
+
+#######################################################
+
+START ZADANIE 46-3
+
+#######################################################
+
+*/
+
+myfuntrescczteryszesctrzy = () => {
+
+    let czteryszesctrzy = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Napisz program który w zależności od podanego przez użytkownika wzrostu w cm wypisze odpowiedni tekst."
+
+    document.querySelector('.contentczteryszczesctrzy').innerHTML = czteryszesctrzy;
+
+}
+
+myfunzadanieczteryszesctrzy = () => {
+
+
+let podajwzrost = parseInt(prompt("Podaj wzost"));
+let level1 = "0-164cm - Niski wzrost"
+let level2 = "165-174cm - Średni wzrost"
+let level3 = "175cm > - Wysok wzrost"
+
+document.querySelector('.tocowpisal').innerHTML = "Podałeś: "+podajwzrost+"cm";
+
+if (podajwzrost > 0 && podajwzrost < 165 ) {
+    document.querySelector('.lowgrowth').innerHTML = level1;
+    document.querySelector('.ciekawostkaniski').innerHTML ="W historii za najniższego człowieka na świecie uchodzi Chandra Bahadur Dangi, który przyszedł na świat 30 listopada 1939 roku w Nepalu, a zmarł 4 września 2015 roku w Pago Pago. Mężczyzna ważył zaledwie 14,5 kilograma, a jeśli chodzi o wzrost, mierzył 0,546 metra.";
+
+} else if (podajwzrost >= 165 && podajwzrost < 175) {
+    document.querySelector('.middlegrowth').innerHTML = level2;
+    document.querySelector('.ciekawostkasredni').innerHTML = "Średni wzrost kobiet na świecie wynosi 159,5 cm.";
+
+
+} else if (podajwzrost > 175) {
+    document.querySelector('.highgrowth').innerHTML = level3;
+    document.querySelector('.ciekawostkawysoki').innerHTML = "Według Księgi Rekordów Guinnessa najwyższym obecnie człowiekiem na świecie jest 38-letni Turek Sultan Kosen, który mierzy 2,51 m. Najwyższym człowiekiem we współczesnej historii jest Amerykanin Robert Wadlow, który miał 2,72 m wzrostu.";
+    
+}
+
+}
+
+/*
+
+#######################################################
+
+KONIEC ZADANIA 46-3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+*/
+
+
+// #######################################################
+// #######################################################
+// #######################################################
+// #######################################################
+
+//KONIEC ZALEGŁYCH
+
+// #######################################################
+// #######################################################
+// #######################################################
+
+//NOWY ROZDZIAŁ
+
+
+/*
+
+__________________ POCZĄTEK ZADANIA 26-1 __________________
+
+*/
+
+
+myfuntrescdwaszescjeden = () => {
+
+    let dwaszescjeden = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Napisz program który wypełni tablicę 10 elementową losowymi wartościami od 1-100."
+
+    document.querySelector('.opisdwaszescjeden').innerHTML = dwaszescjeden;
+
+
+}
+
+myfunzadaniedwaszescjeden = () => {
+
+
+    let mynumbers = [];
+
+    for(let i=0;i<=10;i++) {
+        let losowanie = Math.floor((Math.random() * 100)+ 1);
+        mynumbers.push(losowanie)
+    }
+
+    for(let x = 0; x < mynumbers.length -1; x++){
+        for(let y=x+1; y < mynumbers.length; y++){
+            if(mynumbers[x] < mynumbers[y]) {
+                let pomoc;
+                pomoc = mynumbers[x]
+                mynumbers[x] = mynumbers[y];
+                mynumbers[y] = pomoc; 
+            }
+        }
+    }
+    document.querySelector('.typeofsortHigh').innerHTML = "Poniżej sort od największego do najmniejszego:";
+    document.querySelector('.viewnumbers').innerHTML = "["+mynumbers+"]";
+    
+    
+    for(let x = 0; x < mynumbers.length -1; x++){
+        for(let y=x+1; y < mynumbers.length; y++){
+            if(mynumbers[x] > mynumbers[y]) {
+                let pomoc;
+                pomoc = mynumbers[x]
+                mynumbers[x] = mynumbers[y];
+                mynumbers[y] = pomoc; 
+            }
+        }
+    }
+    document.querySelector('.typeofsortlow').innerHTML = "Ponieżej sort od najmniejszego do największego:";
+    document.querySelector('.viewnumberst2').innerHTML = "["+mynumbers+"]";
+
+}
+
+/*
+
+__________________ KONIEC ZADANIA 26-1 __________________
+
+*/
+
+
+/*
+
+__________________ POCZĄTEK ZADANIA 26-3 __________________
+
+*/
+
+
+myfuntrescdwaszesctrzy = () => {
+
+    let dwaszesctrzy = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Napisz program który pobierze od usera dwie slownie wpisane liczby a nastepnie wykona obliczenie arytmetyczne a zwroci wynik dodawania."
+
+    document.querySelector('.opisdwaszesctrzy').innerHTML = dwaszesctrzy;
+
+}
+
+myfunzadaniedwaszesctrzy = () => {
+
+    let liczby = new Map() 
+
+    liczby.set("jeden", 1);
+    liczby.set("dwa", 2);
+    liczby.set("trzy", 3);
+    liczby.set("cztery", 4);
+    liczby.set("piec", 5);
+    liczby.set("szesc", 6);
+    liczby.set("siedem", 7);
+    liczby.set("osiem", 8);
+    liczby.set("dziewiec", 9);
+    liczby.set("zero", 0);
+
+    let liczba1 =""; 
+    let liczba2 =""; 
+    let flaga = true;
+    let obliczenia = 0;
+    let wynikiobliczen = [];
+    let liczbyjeden = [];
+    let liczbydwa = [];
+    let testpomoc = [];
+
+
+alert("Hi. It is string arithmetic expression calculator. Please provide only string lowercase. To complete the calculation, enter break.")
+
+do {
+    
+    liczba1 = prompt("To interrupt, enter the word break. First lowercase number?:")
+    if(liczba1 == "break"){
+        flaga = false
+        break;
+    }
+    liczbyjeden.push(liczba1)
+    
+
+    liczba2 = prompt("Secondary lowercase number?:")
+    liczbydwa.push(liczba2)
+    obliczenia = liczby.get(liczba1) + liczby.get(liczba2)
+    wynikiobliczen.push(obliczenia)
+
+    alert(`Wynik = ${obliczenia}`)
+
+
+}while(flaga == true); 
+
+
+for(let x=0;x<wynikiobliczen.length;x++){
+    testpomoc.push(" "+liczbyjeden[x]+" + "+liczbydwa[x]+" = "+wynikiobliczen[x]+"  ")
+}
+
+document.querySelector('.prezentacjawyrazen').innerHTML = testpomoc;
+
+
+}
+
+/*
+
+__________________ KONIEC ZADANIA 26-3 __________________
+
+*/
+
+/*
+
+__________________ POACZĄTEK ZADANIA 26-12 __________________
+
+*/
+
+
+myfuntrescdwaszescjedendwa = () => {
+
+    let dwaszescjedendwa = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Napisz program który pobierze od usera slowo a nastepnie wypisz dokladnie zliczone ilosci wystapien poszczegolnych znakow."
+
+    document.querySelector('.opisdwaszescjedendwa').innerHTML = dwaszescjedendwa;
+
+}
+
+myfunzadaniedwaszescjedendwa = () => {
+
+    let podajslowo = prompt();
+    let myarray = [];
+
+    for(let i=0;i<podajslowo.length;i++){
+        myarray.push(podajslowo[i])
+    }
+    
+    document.querySelector('.wprowadzoneslowo').innerHTML = myarray;
+
+    for(let x=0;x<myarray.length;x++) {
+        for(let y=x+1;y<myarray.length;y++){
+            if(myarray[x] > myarray[y]){
+                let pomoc;
+                pomoc = myarray[x];
+                myarray[x] = myarray[y];
+                myarray[y] = pomoc;
+            }
+        }
+
+    }
+
+document.querySelector('.upoWprowadzoneslowo').innerHTML = myarray;
+
+}
+
+/*
+
+__________________ KONIEC ZADANIA 26-12 __________________
+
+*/
+
+
+
+
+/*
+
+__________________ POCZĄTEK ZADANIA 66-5 __________________
+
+*/
+
+myfuntrescszescszescpiec = () => {
+
+    let szescszescpiec = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Napisz program który stworzy dwie tablice a nastepnie wskaze najwieksza wspolna wartosc."
+
+    document.querySelector('.opisszescszescpiec').innerHTML = szescszescpiec;
+
+}
+
+myfunzadanieszescszescpiec = () => {
+
+
+    let tab1 = []; //los1
+    let tab2 = []; //los2
+    
+    let tab3 = []; //takie same
+    
+    
+    for(let x = 0; x < 10; x++){
+            let los1 = Math.floor((Math.random() * 20)+ 1);
+            tab1.push(los1);
+            let los2 = Math.floor((Math.random() * 20)+ 1);
+            tab2.push(los2);
+        }
+        
+        console.log("Ciągi nie uporządkowane")
+        console.log(`Pierwsza tablica ${tab1}`);
+        console.log(`Druga tablica ${tab2}`);
+        console.log("                      ");
+        
+    
+        function sortuj(dane){
+    
+            for(let i = 0; i < dane.length -1; i++){
+                for(let j=i+1; j < dane.length; j++){
+                    if(dane[i] > dane[j]) {
+                        let pomoc;
+                        pomoc = dane[i]
+                        dane[i] = dane[j];
+                        dane[j] = pomoc; 
+                    }  
+                    
+                }
+            }
+        }
+    
+        //sort
+    
+        for(let d=0;d<10;d++){
+            for(let s=0;s<10;s++)
+            if(tab1[s] === tab2[d]){
+                tab3.push(tab1[s])
+            }
+        }
+        
+        sortuj(tab1);
+        sortuj(tab2);
+    
+        console.log("Ciągi uporządkowane")
+        console.log(`Pierwsza tablica ${tab1}`);
+        console.log(`Druga tablica ${tab2}`);
+        console.log("                      ");
+    
+        sortuj(tab3);
+        console.log(tab3);
+        console.log("                      ");
+    
+        const lastItemone = tab1[tab1.length - 1];
+        const lastItemtwo = tab2[tab2.length - 1];
+        const lastItemthree = tab3[tab3.length - 1];
+    
+    document.querySelector('.oznaczeniedlaciagu').innerHTML ="Ciąg uporządkowany" ;
+    document.querySelector('.wylosowaneTab1').innerHTML ="Pierwsza tablica: "+"["+tab1+"]";
+    document.querySelector('.wylosowaneTab2').innerHTML ="Druga tablica: "+"["+tab2+"]";
+
+    if(tab3 == "") {
+        if(lastItemone > lastItemtwo){
+        document.querySelector('.najwiekszawspolna').innerHTML = `Największa wartość znajduje się w Tablicy pierwszej ${lastItemone}`;
+
+        } else if(lastItemone < lastItemtwo) {
+            document.querySelector('.najwiekszawspolna').innerHTML = `Największa wartość znajduje się w Tablicy pierwszej ${lastItemtwo}`;
+        } else if(lastItemone == lastItemtwo) {
+            document.querySelector('.najwiekszawspolna').innerHTML = `W obydwu tablicach wystąpiła taka sama najwyższa wartość i wynosi ${lastItemtwo}.`;
+        }
+    } else
+    document.querySelector('.najwiekszawspolna').innerHTML = `Największa wspólna wartość dla obu tablic to: ${lastItemthree}`;
+
+}
+
+/*
+
+__________________ KONIEC ZADANIA 66-5 __________________
+
+*/
+
+
+/*
+
+__________________ START ZADANIA 67-1 __________________
+
+*/
+
+myfuntrescSzescSiedemJeden = () => {
+
+    let szescSiedemJeden = "P.A.M.I.Ę.T.A.J - CZYTAJ ZE ZROZUMIENIEM: Zrob tak zeby dane ktore wprowadza sie w formularzu pojawily sie w polach po prawej."
+
+    document.querySelector('.opisSzescSiedemJeden').innerHTML = szescSiedemJeden;
+
+}
+
+myfunZadanieSzescSiedemJeden = () => {
+
+    //Tutaj pobieram imię
+    let imie = document.querySelector("input[name='imie']").value;
+
+    //Tutaj wstawiam imie w span
+    document.querySelector("span#imie").innerHTML = imie;
+
+    //Tutaj pobieram nazwisko
+    let nazwisko = document.querySelector("input[name='nazwisko']").value;
+
+    //Tutaj wstawiam nazwisko w span
+    document.querySelector("span#nazwisko").innerHTML = nazwisko;
+
+    //Tutaj pobieram z listy rozwijanej
+    let miasto = document.querySelector("select[name='miasto']").value;
+
+    //tutaj robie pentle na checkbox i pobieram value
+    let znajmoscTech = document.querySelectorAll("input[type='checkbox']");
+    let wyborcheckbox = [];
+    for(let y of znajmoscTech){
+        if(y.checked){
+            wyborcheckbox.push(" "+y.value+" ")
+
+            
+        }
+    }
+
+    //Tutaj wstawiam checkboxy
+    document.querySelector("span#technologie").innerHTML = wyborcheckbox;
+
+    //Tutaj wstawiam z listy rozwijanej
+    document.querySelector("span#miasto").innerHTML = miasto;
+
+    //Tutaj robię pętle na radio i pobieram value
+    let stanowisko = document.querySelectorAll("input[name='stanowisko']");
+    let wyborstanowiska;
+    for(let x of stanowisko){
+        if(x.checked == true){
+            wyborstanowiska = x.value
+            break;
+        }
+    }
+
+    //Tutaj wstawiam wartosci z petli stanowisko
+    document.querySelector("span#stanowisko").innerHTML = wyborstanowiska;
+
+
+    //Tutaj pobieram wartosc z textarea
+    let uwagi = document.querySelector("textarea[name='uwagi']").value;
+
+    //Tutaj wstawiam wartosc z textarea
+    document.querySelector("span#uwagi").innerHTML = uwagi;
+
+}
+
+
+/*
+
+__________________ KONIEC ZADANIA 67-1 __________________
+
+*/
+
+
