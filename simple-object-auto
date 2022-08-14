@@ -1,0 +1,41 @@
+<script>
+
+class Auto {
+
+    //ogólnie jak tworze konstruktor nie musze juz tworzyc pol.
+    //Tu są tylko dlatego jest zmixowana wersja
+    constructor(_marka, _model, _kolor, _silnik) {
+        this.marka = _marka;
+        this.model = _model;
+        this.kolor = _kolor;
+        this.silnik = _silnik;
+    
+    }
+    
+    //tutaj lepiej przewidziec wiecej rzeczy bo to jest repo
+    // w obiekcie wywoluje tylko to co potrzebuje z tej klasy
+    }
+    
+    let bmw = new Auto("BMW","x3","Biały",3.0); //bmw korzysta z repo Auto
+    
+    let opel = new Auto(); // opel korzysta z repo Auto
+    
+        opel.marka = "Opel"; //obiektowi nadaje wartosc korzystajac z pola w klasie
+        opel.model = "Zafira";
+        opel.kolor = "zielony";
+        opel.silnik = 1.0;
+    
+    let mazda = new Auto(); // mazda korzysta z repo Auto
+    
+        mazda.marka = "mazda"; //obiektowi nadaje wartosc korzystajac z pola w klasie
+        mazda.model = "6";
+        mazda.kolor = "wiśniowy";
+        mazda.silnik = 1.5;
+    
+    
+    console.log(bmw)
+    console.log(mazda)
+    console.log(opel)
+    
+    
+    </script> 
