@@ -1,0 +1,122 @@
+<script>
+
+    class Pracownik {
+
+        constructor(imie, nazwisko, kontrakt, pensja) {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.kontrakt = kontrakt;
+            this.pensja = pensja;
+        }
+
+    }
+
+    //to jest rozdzielajaca
+    class PracownikController{
+
+        constructor(){
+
+            this.listaPracwnikow = [];
+        }
+
+        myfunDodaj = (imie, nazwisko, kontrakt="staż", pensja=1000)  => {
+        
+            let pracownik = new Pracownik(imie, nazwisko, kontrakt, pensja)
+            this.listaPracwnikow.push(pracownik);
+            console.log("Dodano pracownika pomyślnie")
+
+        }
+
+        myfunPokaz = () => {
+            
+            for(let v of this.listaPracwnikow) {
+                console.log("Lista pracowników: ",v.imie, v.nazwisko, v.kontrakt, v.pensja);
+            }
+
+        }
+        myfunUsun = (nazwisko) => {
+
+            for(let v in this.listaPracwnikow) {
+                if(this.listaPracwnikow[v].nazwisko == nazwisko){
+                    this.listaPracwnikow.splice(v, 1)
+                    console.log("Praconik został usunięty")
+
+                }
+            }
+
+        }
+        myfunZmien = (nazwisko, pensja) => {
+            for(let v of this.listaPracwnikow) {
+                if(v.nazwisko == nazwisko){
+                    v.pensja = pensja;
+                    v.kontrakt = "Etat";
+                    console.log("Pensja została zmieniona")
+                }
+
+            }
+
+
+        }
+        myfunZnajdz = (nazwisko) => {
+            for(let v of this.listaPracwnikow){
+                if(v.nazwisko == nazwisko){
+                    console.log(`Pracownik o nazwie ${nazwisko} którego szukasz to:`,v.imie, v.nazwisko, v.kontrakt, v.pensja);
+                }
+            }    
+        }
+    }
+
+    class Firma extends PracownikController{
+        
+        constructor(podajnazwefirmy) {
+            super();
+            this.nazwaFirmy = podajnazwefirmy;
+            this.menu();
+        }
+
+        menu = () => {
+
+            while(true){
+
+                let menu = parseInt(prompt(`Witaj w firmie ${this.nazwaFirmy} \n1-dodaj pracownika, 2-pokaz pokaz liste pracownikow, 3-usun pracownika, 4-zmien kontrakt, 5-znajdź pracownika, 6-Zakończ`));
+
+                if(menu == 1){
+
+                    let imie = prompt("Podaj imię pracownika");
+                    let nazwisko = prompt("Podaj nazwisko pracownika");
+                    let kontrakt = prompt("Jaki kontrakt: E/S");
+                    if(kontrakt == "S") {
+                        this.myfunDodaj(imie, nazwisko)
+                    } else if(kontrakt == "E") {
+                    let pensja = parseInt(prompt("Wprowadz pensje"));
+                    this.myfunDodaj(imie, nazwisko, kontrakt, pensja)
+                    }
+                }
+                else if(menu == 2){
+                    this.myfunPokaz();
+                }
+                else if(menu == 3){
+                    let nawisko = prompt("Podaj nazwisko pracownika");
+                    this.myfunUsun(nawisko);
+                }
+                else if(menu == 4){
+                    let nawisko = prompt("Podaj nazwisko");
+                    let pensje = parseInt(prompt("Wprowadź nową pensje"));
+                    this.myfunZmien(nawisko, pensje);
+                }
+                else if(menu == 5){
+                    let nawisko = prompt("Podaj nazwisko");
+                    this.myfunZnajdz(nawisko);
+                }
+                else if(menu == 6){
+                    break;
+                }
+            }
+            
+    }
+}
+
+let podajnazwefirmy = prompt("Nazwa firmy?")
+let nazwaFirmy = new Firma(podajnazwefirmy)
+
+</script>
