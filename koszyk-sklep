@@ -1,0 +1,50 @@
+<script>
+
+    let sklep = new Map([
+    
+    ["sok", 1.55],
+    ["woda", 2.55],
+    ["chleb", 3.55],
+    
+    ]);
+    let koszyk = [];
+    
+    function dodawanie(start) {
+        let dodajprodukt = prompt();
+        koszyk.push(dodajprodukt);
+    }
+    
+    
+    
+    while(true){
+    
+        let menu = parseInt(prompt("1-dodaj produkt, 2-pokaz zawartosc koszyka, 3-kasa/koniec 0-wyjdź"));
+        
+    
+        if(menu == 1){
+            dodawanie(1);
+            if(prompt == 1) {
+                let menu = parseInt(prompt("1-dodaj produkt, 2-pokaz zawartosc koszyka, 3-kasa/koniec 0-wyjdź"));
+            }
+        }
+        else if(menu == 2){
+            for(let x of koszyk) {
+                console.log(x)
+                break;
+            }
+        }
+        else if(menu == 3){
+            let sum = 0;
+            for(let i=0; i < koszyk.length; i++){
+                console.log(`Produkt: ${koszyk[i]} Cena: ${sklep.get(koszyk[i])}`)
+                sum += sklep.get(koszyk[i]);
+                }
+                console.log(`Razem do zapłaty: ${sum}`);
+                koszyk.splice(0, koszyk.length)
+                console.log(koszyk)
+        
+        } else if(menu === 0) {
+            break;
+        }
+    }
+    </script>
