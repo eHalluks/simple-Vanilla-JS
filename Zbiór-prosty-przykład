@@ -1,0 +1,19 @@
+<script>
+
+        let zbior = new Set();
+
+        let ilosc = 0;
+
+        while(zbior.size <= 6) {
+
+        let liczba1 = Math.floor((Math.random() * 10) + 1);
+        zbior.add(liczba1);
+        console.log(zbior);
+
+        ilosc = ilosc + 1
+
+        }
+
+        console.log(ilosc)
+
+</script> -->
