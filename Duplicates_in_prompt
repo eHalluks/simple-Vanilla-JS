@@ -2,28 +2,28 @@ LANG=PL
 
 <script>
 
-let zbiorliczb = new Set()
+let zbiorLiczb = new Set()
 
-    let countduplicate = 0;
+    let countDuplicate = 0;
     let count = 0
 
 for(let i=1; i<=5; i++) {
 
-    let podajliczbe = parseInt(prompt("Twoja liczba"))
+    let podajLiczbe = parseInt(prompt("Twoja liczba"))
 
-    if(zbiorliczb.has(podajliczbe) == true) {
-        zbiorliczb.add(podajliczbe)
-        countduplicate++
+    if(zbiorLiczb.has(podajLiczbe) == true) {
+        zbiorLiczb.add(podajLiczbe)
+        countDuplicate++
     } else  {
-        zbiorliczb.add(podajliczbe)
+        zbiorLiczb.add(podajLiczbe)
         count++
     }
     
 
 }
-    console.log(zbiorliczb);
+    console.log(zbiorLiczb);
     console.log(`Nie duplikat ${count}`);
-    console.log(`Duplikat ${countduplicate}`);
+    console.log(`Duplikat ${countDuplicate}`);
 
 
 </script>
