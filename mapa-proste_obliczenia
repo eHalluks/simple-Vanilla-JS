@@ -1,0 +1,24 @@
+<script>
+
+    alert("Po podaniu dwóch liczb zostanie wykonane dodawanie tych liczb. Wpisz słownie liczbę od jeden do pięć")
+
+    let liczby = new Map();
+
+    liczby.set("jeden", 1);
+    liczby.set("dwa", 2);
+    liczby.set("trzy", 3);
+    liczby.set("cztery", 4);
+    liczby.set("pięć", 5);
+    liczby.set("sześć", 6);
+    liczby.set("siedem", 7);
+    liczby.set("osiem", 8);
+    liczby.set("dziewięć", 9)
+    liczby.set("dziesięć", 10)
+
+    let liczba1 = prompt("");
+    let liczba2 = prompt("");
+    let obliczenia = liczby.get(liczba1) + liczby.get(liczba2);
+    console.log(obliczenia);
+
+
+</script>
