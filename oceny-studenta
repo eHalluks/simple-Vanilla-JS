@@ -1,0 +1,99 @@
+<script>
+
+    class Student {
+
+        constructor(_imie, _nazwisko, ocena) {
+            this.imie = _imie,
+            this.nazwisko = _nazwisko,
+            this.ocena = [];
+        }
+
+    }
+
+    let listaStudentow = [];
+
+    while(true){
+        
+
+        let menu = parseInt(prompt("1-dodaj studenta, 2-wypisz studentow, 3-usun studenta, 4-edytuj studenta, 5-dodaj ocene studentowi, 6-wypisz oceny studenta, 0-Wyjdź"));
+
+        if(menu === 0) {
+        break;
+        }
+
+        if(menu == 1){
+            let podajImie = prompt("Podaj imie");
+            let podajNazwisko = prompt("Podaj nazwisko");
+            let student = new Student(podajImie, podajNazwisko);
+            listaStudentow.push(student)
+            console.log(`Student o imieniu ${podajImie} i nazwisku ${podajNazwisko}, został pomyślnie dodany`)
+        }
+
+        else if(menu == 2){
+            for(let i of listaStudentow){
+                console.log(i.imie);
+                console.log(i.nazwisko);
+            }
+            
+        }
+
+        else if(menu == 3){
+            console.log(listaStudentow)
+            let requestremove = prompt("Podaj nazwisko");
+
+                for(let j in listaStudentow) {
+                    if(listaStudentow[j].nazwisko == requestremove){
+                        listaStudentow.splice(j, 1);
+                        console.log("Pomyślnie usunieto")
+                        break;
+                    }
+                }
+            }
+
+        else if(menu == 4){
+
+            console.log(listaStudentow)
+            let requestedit = prompt("Podaj nazwisko");
+            console.log(requestedit)
+
+            for(let j in listaStudentow) {
+                if(listaStudentow[j].nazwisko == requestedit){
+                console.log("Prawda")
+                let edit1 = prompt("Podaj nowe imie")
+                let edit2 = prompt("Podaj nowe nazwisko")
+                console.log(listaStudentow[j].imie = edit1);
+                console.log(listaStudentow[j].nazwisko = edit2);
+                console.log("Imie i nazwisko zostało zmienione pomyślnie.")
+            
+            }
+        } 
+    }
+        else if(menu == 5){
+            
+            console.log(listaStudentow);
+            let studentname = prompt("Podaj nazwisko studenta");
+            let addrate = parseInt(prompt("Wpisz ocenę"));
+            
+            for(let j in listaStudentow) {
+                if(listaStudentow[j].nazwisko == studentname){
+                    listaStudentow[j].ocena.push(addrate);
+                    console.log(listaStudentow[j].ocena);
+                }
+            }
+        }
+
+        else if(menu == 6){
+            console.log(listaStudentow);
+            let studentname = prompt("Podaj nazwisko studenta");
+
+            for(let j in listaStudentow) {
+                if(listaStudentow[j].nazwisko == studentname){
+                    console.log(listaStudentow[j].ocena)
+            
+            }   
+
+        }
+    }
+
+}
+</script>
