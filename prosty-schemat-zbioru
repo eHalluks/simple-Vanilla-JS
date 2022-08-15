@@ -1,0 +1,25 @@
+<Script>
+
+    let zbior = new Set();
+
+        console.log(zbior);
+
+
+        zbior.add(12);
+        zbior.add(2);
+        zbior.add(50);
+        zbior.add("A");
+        zbior.add("X");
+
+        console.log(zbior);
+
+
+            for(let x of zbior){
+                console.log(x);
+            }
+
+        zbior.delete(50);
+
+        console.log(zbior);
+
+</Script>
