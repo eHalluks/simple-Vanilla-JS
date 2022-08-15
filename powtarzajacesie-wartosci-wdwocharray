@@ -1,0 +1,44 @@
+<Script>
+
+    let tab1 = [];
+    let tab2 = [];
+
+    for (let i=0; i<10; i++) {
+
+        let los = Math.floor((Math.random() * 30) + 1);
+        tab1.push(los);
+        
+        los = Math.floor((Math.random() * 30) + 1);
+        tab2.push(los);
+    }
+
+
+    console.log(tab1);
+    console.log(tab2);
+
+
+    for(let i=0; i<10; i++){
+        
+        for(let j=0; j<10; j++){
+
+            if(tab1[i]==tab2[j]){
+                console.log(tab1[i]);
+                break;
+            }
+
+        }
+    }
+
+    for(let x of tab1){
+
+        for(let y of tab2){
+            if(x == y){
+                console.log(x);
+                break;
+            }
+        }
+
+    }
+
+
+</Script>
