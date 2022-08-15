@@ -1,0 +1,118 @@
+<script>
+
+    let zm1 = "SUKCES";
+    let zm2 = "słownik!";
+    let zm3 = "występuje";
+    let zm4 = "jest";
+    let zm5 = "WYSIŁKIEM";
+    let zm6 = "Jedynym";
+    let zm7 = "gdzie";
+    let zm8 = "miejscem";
+    let zm9 = "przed";
+    let pomoc = "";
+
+
+    class ZdaniePrzed {
+
+        constructor(zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9){
+
+            this.slowo1 = zm1;
+            this.slowo2 = zm2;
+            this.slowo3 = zm3;
+            this.slowo4 = zm4;
+            this.slowo5 = zm5;
+            this.slowo6 = zm6;
+            this.slowo7 = zm7;
+            this.slowo8 = zm8;
+            this.slowo9 = zm9;
+
+        }
+
+    }
+
+
+    console.log(zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9);
+    const zmkiPrzedZmiana = [zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9];
+    console.log(zmkiPrzedZmiana);
+
+    let zdaniePrzed = new ZdaniePrzed (zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9);
+
+    console.log(zdaniePrzed);
+
+
+        pomoc = zm1;
+        zm1 = zm6;
+        zm6 = pomoc;
+        //zm6 przechowuje SUKCES (nie aktualne już)
+        console.log(`Tymczasowy kontener: ${zm6}`);
+        pomoc = zm2;
+        zm2 = zm8;
+        zm8 = pomoc;
+        //zm8 przechowuje słownik 
+        console.log(`Tymczasowy kontener: ${zm8}`);
+        pomoc = zm3;
+        zm3 = zm7;
+        zm7 = pomoc;
+        //zm7 przechowuje występuje (nie aktualne już)
+        console.log(`Tymczasowy kontener: ${zm7}`);
+        pomoc = zm4;
+        zm4 = zm6;
+        zm6 = pomoc;
+        //zm6 przechowuje jest
+        console.log(`Tymczasowy kontener: ${zm6}`);
+        pomoc = zm5;
+        zm5 = zm7;
+        zm7 = pomoc;
+        //zm7 przechowuje wysiłkiem
+        console.log(`Tymczasowy kontener: ${zm7}`);
+        pomoc = zm6;
+        zm6 = zm9;
+        zm9 = pomoc;
+        //zm9 przechowuje jest (nie aktualne już)
+        console.log(`Tymczasowy kontener: ${zm9}`);
+        pomoc = zm8;
+        zm8 = zm9;
+        zm9 = pomoc;
+        //zm9 przechowuje słownik
+        console.log(`Tymczasowy kontener: ${zm9}`);
+
+
+        class ZdaniePo {
+
+            constructor(zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9){
+
+                this.slowo1 = zm1;
+                this.slowo2 = zm2;
+                this.slowo3 = zm3;
+                this.slowo4 = zm4;
+                this.slowo5 = zm5;
+                this.slowo6 = zm6;
+                this.slowo7 = zm7;
+                this.slowo8 = zm8;
+                this.slowo9 = zm9;
+
+            }
+
+        }
+
+    //Jedynym miejscem gdzie SUKCES występuje przed WYSIŁKIEM jest słownik
+    console.log(zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9);
+    const zmkiPoZmianie = [zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9];
+    console.log(zmkiPoZmianie);
+
+    let zdaniePo = new ZdaniePo (zm1,zm2,zm3,zm4,zm5,zm6,zm7,zm8,zm9);
+
+    console.log(zdaniePo)
+
+    localStorage.setItem("Modyfkacja", JSON.stringify([zdaniePo]));
+
+    let stanStorageJson = localStorage.getItem("Modyfkacja");
+            if(stanStorageJson != null) {
+                let daneStorage = JSON.parse(stanStorageJson);
+                console.log("To są dane ze storage", daneStorage);   
+            } else{
+                alert("I regret to inform your query can not be handled. This entry does not exist in the our database. Please try again later.")
+            }
+
+
+</script>
