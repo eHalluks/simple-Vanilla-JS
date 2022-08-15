@@ -1,0 +1,20 @@
+<Script>
+
+let sklep = new Map();
+
+//dodawanie
+sklep.set("sok", 3.33);
+sklep.set("woda", 1.33);
+sklep.set("piwo", 5.33);
+
+console.log(sklep);
+
+//odczytywanie wartosci z pod danego klucza
+console.log(`Cena wody: ${sklep.get("woda")}zł`);
+
+//petla do odczytu wszystkich
+for(let x of sklep.keys()){
+    console.log(`Cena za towar: ${x} wynosi ${sklep.get(x)}zł/1szt`);
+}
+
+</Script>
