@@ -1,0 +1,54 @@
+<script>
+
+        let zbior = new Set();
+
+        let ilosc = 0;
+
+        while(zbior.size <= 6) {
+
+        let liczba1 = Math.floor((Math.random() * 10) + 1);
+        zbior.add(liczba1);
+        console.log(zbior);
+
+        ilosc = ilosc + 1
+
+        }
+
+        console.log(ilosc)
+
+</script>
+
+
+<Script>
+
+let zbior = new Set();
+
+console.log(zbior);
+
+//dodawanie
+zbior.add(12);
+zbior.add(2);
+zbior.add(50);
+zbior.add("A");
+zbior.add("X");
+
+console.log(zbior);
+
+//przegladanie
+for(let x of zbior){
+    console.log(x);
+}
+
+//usuwanie
+zbior.delete(50);
+
+console.log(zbior);
+
+//rozmiar zbioru
+console.log(zbior.size)
+
+//sprawdzanie czy dana wartosc jest w zbiorze
+console.log(zbior.has("X"));
+
+
+</Script>
