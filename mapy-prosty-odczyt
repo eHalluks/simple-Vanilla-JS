@@ -17,4 +17,41 @@ for(let x of sklep.keys()){
     console.log(`Cena za towar: ${x} wynosi ${sklep.get(x)}zł/1szt`);
 }
 
+let sklep = new Map();
+
+//dodawanie
+sklep.set("sok", 3.33);
+sklep.set("woda", 1.33);
+sklep.set("piwo", 5.33);
+
+console.log(sklep);
+
+//odczytywanie wartosci z pod dane klucza
+console.log(`Cena wody: ${sklep.get("woda")}zł`);
+
+for(let x of sklep.keys()){
+    console.log(`Cena za towar: ${x} wynosi ${sklep.get(x)}zł/1szt`);
+}
+
+//modyfikacja
+sklep.set("sok", 15.88);
+
+//sprawdzanie czy klucz istnieje
+console.log(sklep.has("sok"));
+
+//rozmiar mapy
+console.log(sklep.size);
+
+//usuwanie
+sklep.delete("piwo");
+
+console.log(sklep);
+
+
+for(let x of sklep.values()){
+    if(x == ""){
+        console.log(x)
+    }
+}
+
 </Script>
