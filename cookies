@@ -1,0 +1,81 @@
+//html
+
+<!DOCTYPE html>
+
+    <html lang="pl">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cookies</title>
+        <!-- jQuery zawsze na samej górze -->
+        <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script  src="cookies.js"></script>
+
+    </head>
+    <body>
+
+        
+        <button id="open">Open</button>
+        <button id="read">Read only</button>
+        <button id="remove">Remove</button>
+
+
+    </body>
+    </html>
+    
+    //js
+    
+    document.addEventListener("DOMContentLoaded", function(){
+
+    document.querySelector("#open").addEventListener("click", function(){
+
+        utworz("eHalluks", "Exemplary value", 2);
+        //modyfikacja to zmiana wartosci tutaj trzeba wziac ta sama nazwe i w polu wartosci trzeba zmienic poprostu wartosc. 
+    })
+
+    document.querySelector("#read").addEventListener("click", function(){
+
+        czytaj("ALX4");
+
+    })
+
+    document.querySelector("#remove").addEventListener("click", function(){
+
+        utworz("ALX4", "", -1);
+
+    })
+
+});
+
+    utworz = (nazwa, wartosc, ileDni) => {
+        
+        let d = new Date(); //Get time (now);
+        d.setTime(d.getTime() + (ileDni * 24 * 60 * 60 * 1000));
+        //settime ustawia wartosc kiedy wygasa 
+        document.cookie = nazwa+"="+wartosc+";expires="+d.toUTCString();
+
+        //document coockie = do wrzucania
+
+        //ALX = Kurs JS; expires=milisekundy (11234124)
+
+    };
+    czytaj = (nazwa) => {
+
+        //dokument coockie bez = pobiera
+        let ciastka = document.cookie;
+        let ciastkaTab = ciastka.split("; ");
+        for(let x of ciastkaTab){
+            let xTab = x.split("=");
+                if(xTab[0] === nazwa){
+                    console.log(xTab[1]);
+                    break;
+                }
+            // console.log(xTab);
+        }
+        // console.log(ciastkaTab);
+
+    };
+
+    
