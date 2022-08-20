@@ -1,0 +1,159 @@
+//html
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="61.js"></script>
+    <link rel="stylesheet" href="61.css">
+    <title>jQuery</title>
+</head>
+<body>
+    <p id='napisTestowy'>NAPIS TESTOWY</p>
+		
+		<p id='bold'>Pogrubienie: 
+			<span class='dodaj'>Dodaj</span>
+			<span class='usun'>Usuń</span>
+		</p>
+		
+		<p id='borderBottom'>Obramowanie dolne: 
+			<span class='dodaj'>Dodaj</span>
+			<span class='usun'>Usuń</span>
+		</p>
+		
+		<p id='fontSize30'>Rozmiar czcionki 30: 
+			<span class='dodaj'>Dodaj</span>
+			<span class='usun'>Usuń</span>
+		</p>
+		
+		<p id='colorRed'>Kolor czerwony: 
+			<span class='dodaj'>Dodaj</span>
+			<span class='usun'>Usuń</span>
+		</p>
+</body>
+</html>
+
+// css
+
+.bold{
+	font-weight:bold;
+}
+
+.borderBottom{
+	border-bottom:1px solid red;
+}
+
+.fontSize30{
+	font-size:30px;
+}
+
+.colorRed{
+	color:red;
+}
+
+//js
+
+$(document).ready(function(){
+
+    $("p#bold .dodaj").click(function(){
+        $("#napisTestowy").addClass("bold");
+
+    });
+
+    $("p#bold .usun").click(function(){
+        $("#napisTestowy").removeClass("bold");
+
+    });
+
+    $("p#borderBottom .dodaj").click(function(){
+        $("#napisTestowy").addClass("borderBottom");
+    });
+
+    $("p#borderBottom .usun").click(function(){
+        $("#napisTestowy").removeClass("borderBottom");
+
+    });
+
+    $("p#fontSize30 .dodaj").click(function(){
+        $("#napisTestowy").addClass("fontSize30");
+    });
+
+    $("p#fontSize30 .usun").click(function(){
+        $("#napisTestowy").removeClass("fontSize30");
+
+    });
+
+    $("p#colorRed .dodaj").click(function(){
+        $("#napisTestowy").addClass("colorRed");
+    });
+
+    $("p#colorRed .usun").click(function(){
+        $("#napisTestowy").removeClass("colorRed");
+
+    });
+
+});
+
+//other explemplary codes ############################################################
+
+//html
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="575859.js"></script>
+    <title>jQuery</title>
+</head>
+<body>
+
+    <div style="padding:10px; background-color:gray">TEST</div>
+		
+		<p id="zielony">zielony</p>
+		<p id="niebieski">niebieski</p>
+		<p id="zolty">żółty</p>
+
+    <p style="font-size: 50px;">Najechano na To <span id="wynik"> ... </span></p>
+    <P id="licznik" style="background: yellow; font-size: 50px;" >TURUSZAJMYSZKA</P>
+    
+
+
+</body>
+</html>
+
+
+//js
+
+$(document).ready(function(){
+
+    
+    $("#zielony").click(function(){
+        $("div").css("background", "green");
+        $("div").css("color", "white");
+    });
+
+    $("#niebieski").click(function(){
+        $("div").css("background", "blue");
+        $("div").css("font-weight", "bold");
+    });
+    $("#zolty").click(function(){
+        $("div").css("background", "yellow");
+        $("div").css("color", "black");
+    });
+
+    let start = 0;
+
+    $("#licznik").mouseover(function(){
+        start++    
+        $("#wynik").html(start);
+        $("#wynik").css("background", "red").css("color", "white")
+    });
+    
+
+});
+
+
