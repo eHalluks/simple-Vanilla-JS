@@ -1,0 +1,142 @@
+<script>
+
+    let daneBmi = new Map();
+
+        daneBmi.set('<16,0', "wygłodzenie");
+        daneBmi.set('16,0 - 16,9', "wychudzenie");
+        daneBmi.set('17,0 - 18,5', "niedowaga");
+        daneBmi.set('18,5 - 24,9', "waga prawidłowa");
+        daneBmi.set('25,0 - 29,9', "nadwaga");
+        daneBmi.set('30,0 - 34,9', "otyłość I stopnia");
+        daneBmi.set('35,0 - 39,9', "otyłość II stopnia");
+        daneBmi.set('≥40', "Otyłość III stopnia");
+
+        for(let v of daneBmi){
+            console.log(v);
+        }
+
+        class Pacjent {
+
+            constructor(imie, wzrost, waga){
+                this.imie = imie;
+                this.wzrost = wzrost;
+                this.waga = waga;
+
+            }
+
+
+            myfunBmi = (wzrost, waga) => {    
+                
+                
+                let obliczenia = this.waga/(this.wzrost*this.wzrost)* 10000;
+                
+                console.log(`Twoje BMI wynosi: ${obliczenia.toFixed(2)}Kg/m2. Wynik to:`);
+
+                if(obliczenia < 16.0){
+
+                    console.log(daneBmi.get('<16,0'));
+
+                } else if(obliczenia >= 16.00 && obliczenia <= 16.99){
+
+                    console.log(daneBmi.get('16,0 - 16,9'));
+
+                }else if(obliczenia >= 17.00 && obliczenia < 18.50){
+                    
+                    console.log(daneBmi.get('17,0 - 18,5'));
+
+                }else if(obliczenia >= 18.50 && obliczenia <= 24.99){
+                    
+                    console.log(daneBmi.get('18,5 - 24,9'));
+
+                }else if(obliczenia >= 25.00 && obliczenia <= 29.99){
+                    
+                    console.log(daneBmi.get('25,0 - 29,9'));
+
+                }else if(obliczenia >= 30.00 && obliczenia <= 34.99){
+                    
+                    console.log(daneBmi.get('30,0 - 34,9'));
+
+                }else if(obliczenia >= 35.00 && obliczenia <= 39.99){
+                    
+                    console.log(daneBmi.get('35,0 - 39,9'));
+
+                }else if(obliczenia >= 40.00){
+
+                    console.log(daneBmi.get('≥40'));
+
+                } else {
+                    alert("Podane dane są nie prawidłowe. Spróbuj jeszcze raz")
+                }
+
+                
+
+            }
+        }
+
+        alert("Będziemy liczyć body mass index w skrócie BMI. Aby zakończyć wpisz stop");
+        let licznik = 0;
+
+        while(true){
+
+
+            if(licznik > 0){
+
+                let request = parseInt(prompt("Czy chcesz policzyć ponownie. 1-TAK, 2-NIE"));
+
+                    if(request === 1){
+
+                        let imie = prompt("Podaj imie");
+                    
+                        if(imie === "stop"){
+                            break;
+                        }
+                            let wzrost = parseInt(prompt("Jaki wzrost"));
+                        
+                        if(wzrost === "stop"){
+                            break;
+                        }
+                            let waga = parseInt(prompt("Jaka waga"));
+                        
+                        if(waga === "stop"){
+                            break;
+                        }
+
+                        licznik++
+
+                        let pacjent = new Pacjent(imie, wzrost, waga);
+                        console.log(pacjent);
+                        pacjent.myfunBmi(wzrost, waga);
+
+                    }else if(request === 2){
+                        break;
+                    }
+            }
+            
+
+            let imie = prompt("Podaj imie");
+                            
+                if(imie === "stop"){
+                    break;
+                }
+            let wzrost = parseInt(prompt("Jaki wzrost"));
+                            
+                if(wzrost === "stop"){
+                    break;
+                }
+            let waga = parseInt(prompt("Jaka waga"));
+                            
+                if(waga === "stop"){
+                    break;
+                }
+
+            licznik++
+
+            let pacjent = new Pacjent(imie, wzrost, waga);
+            console.log(pacjent);
+            pacjent.myfunBmi(wzrost, waga);
+            
+
+            }
+
+
+</script>
