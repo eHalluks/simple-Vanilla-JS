@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY TODO LIST</title>
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto+Mono:wght@500&family=Source+Sans+Pro:wght@900&display=swap');
+
+    *{
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+    }
+
+    *:before, *:after {
+        box-sizing: border-box;
+      }
+
+
+    div {
+
+        margin-top: 75px;
+        margin-left: 25px;
+
+    }
+
+    h1{
+
+        color: #3f107d;
+        font-family: 'Poppins', sans-serif;
+        font-size: 65px;
+        padding-bottom: 40px;
+
+    }
+
+    input[type=text], select {
+        width: 600px;
+        padding: 15px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        box-sizing: border-box;
+        font-size: 16px;
+        border-radius: 4px;
+        margin-bottom: 30px;
+        color: #3f107d;
+        font-family: 'Poppins', sans-serif;;
+      }
+
+    input::placeholder{
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 2px;
+        color: rgba(63, 16, 125, 45%)
+
+    }
+
+    input:focus{
+        outline-color: #3f107d;
+    }
+
+      #submitID {
+          width: 120px;
+          background-color:#fa6d02;
+          color: white;
+          margin-right: 10px;
+          padding: 15px;
+          margin-left: 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        transition-duration: 0.4s;
+      }
+
+    #clearTodos {
+
+        width: 150px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      background-color: #3f107d;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    #todoList {
+
+        padding: 15px;
+
+    }
+
+    li{
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        padding: 5px;
+        position: relative; 
+    
+    }
+
+    .checkbox {
+
+        margin: 15px;
+        height: 1.5rem;
+        width: 1.5rem;
+        text-align: center;
+        color: #41B883;
+        vertical-align: bottom;
+        position: relative;
+        top: 15px;
+        *overflow: hidden;
+        accent-color: #fa5102;
+
+    }
+
+    #clearTodos:hover, #submitID:hover  {
+        background-color: gray;
+    }
+
+    li:hover{
+
+        color:#fa5102;
+
+    }
+
+
+    #time{
+        color: #3f107d;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: bold;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+        font-size: 20px;
+    }
+
+    li{
+
+        color: #3f107d;
+        font-size: 1.5rem;
+    }
+
+
+  </style>
+
+</head>
+<body>
+    <div>   
+    <header>
+      <h1>TODO LIST:</h1>
+      <p id="time"></p>
+    </header>
+    <section>
+      <form id="form">
+        <label for="todoItem">
+          <input id="todoItem" type="text" name="todoItem" placeholder="Add new task..." />
+          <button id="submitID" type="submit">Add todo</button>
+        </label>
+        <button type="button" id="clearTodos">Close realized</button>
+      </form>
+      
+      <ul id="todoList">
+      </ul>
+      
+
+    </section>
+
+    </div>
+  <script>
+
+    const todoForm = document.querySelector('#form');
+    const todoInput = document.querySelector('#todoItem');
+    const todoList = document.querySelector('#todoList');
+    const clearTodos = document.querySelector('#clearTodos');
+
+    const validateForm = () => {
+      return todoInput.value.length > 2;
+    }
+
+    const addTodo = (event) => {
+      event.preventDefault();
+
+      const isValid = validateForm();
+      if(!isValid) return;
+
+      todoList.innerHTML = todoList.innerHTML + `
+        <li>
+          <label>
+            <input type="checkbox" class="checkbox">
+            ${todoInput.value}
+          </label>
+        </li>
+      `
+
+      todoInput.value = '';
+    }
+
+    const clearTodo = (event) => {
+      event.preventDefault();
+
+      const allTodoInputs = todoList.querySelectorAll('input');
+
+      [...allTodoInputs]
+        .filter(todoInput => todoInput.checked)
+        .forEach(filteredTodoInput => filteredTodoInput.parentElement.parentElement.remove())
+    }
+
+
+    todoForm.addEventListener('submit', addTodo)
+    clearTodos.addEventListener('click', clearTodo)
+
+
+    const timeDisplay = document.getElementById("time");
+
+
+    function refreshTime() {
+
+    const dateString = new Date().toLocaleString("PL", {timeZone: "Poland"});
+    const formattedString = dateString.replace(", ", " - ");
+    timeDisplay.innerHTML = formattedString;
+
+    }
+
+    setInterval(refreshTime, 1000);
+
+  </script>
+</body>
+</html>
