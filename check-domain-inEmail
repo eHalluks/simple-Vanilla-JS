@@ -1,0 +1,28 @@
+    <script>
+
+const yourDomain = '@ehalluks.fun'
+const subText = "name.surname@ehalluks.fun";
+let checkDomain = "";
+
+
+ myfunResultAfterCheck = (txtDisplay) => {
+
+    if(checkDomain === yourDomain){
+        return console.log(`The entered: ${txtDisplay} domain is correctly.`);    
+        }else{
+            return alert("The entered domain is not correctly");
+        }
+
+ }
+
+
+for(let i = 0; i < subText.length; i++){
+
+    if(subText[i] === "@"){
+        checkDomain = subText.substring(i, subText.length);
+        myfunResultAfterCheck(checkDomain);
+    }
+}
+
+
+    </script>
