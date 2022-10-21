@@ -1,0 +1,13 @@
+    //It has to be String
+    
+    let personalIDNumber = "88102189789";
+    
+    if(personalIDNumber.length < 11 || personalIDNumber.length > 11){
+
+        console.log("Enetered value is not correct.");
+        
+    }else {
+        
+        console.log("Enetered value is correct.");
+
+    }
