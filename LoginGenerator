@@ -1,0 +1,41 @@
+    //assumption: login === 8 char
+
+    const loginGenerator = new String("Name Surname");
+    let login;
+    const loginDataBase = [];
+    let numberGenerator = 0;
+    const firstPart = loginGenerator.substr(0,3);
+    let secondPart;
+
+    myFunPrepareTheLogin = () =>{
+
+        for (let i = 0; i < loginGenerator.length; i++){
+            
+            if(loginGenerator[i] === " "){
+                secondPart = loginGenerator.substr(i + 1, 5);
+                login = firstPart+secondPart;
+                login = login.toLowerCase();
+                login = login.trim();
+                if(loginDataBase.length === 0){
+                    loginDataBase.push(login);
+                }else{
+                loginDataBase.map(element => {
+                    if(element === login){
+                        numberGenerator++;
+                        loginDataBase.push(element+numberGenerator);
+                    }
+                    });
+                }
+            }
+        }
+
+    }
+
+
+    for (let j = 0; j< 11; j++){
+
+        myFunPrepareTheLogin();
+    }
+
+
+    console.log(loginDataBase);
