@@ -1,41 +1,146 @@
     //assumption: login === 8 char
 
-    const loginGenerator = new String("Name Surname");
     let login;
-    const loginDataBase = [];
-    let numberGenerator = 0;
-    const firstPart = loginGenerator.substr(0,3);
-    let secondPart;
+    let numberForLogin = 0;
+    let numberForToShortLogin = 0;
+    let toShortLogin;
 
-    myFunPrepareTheLogin = () =>{
+    class Login {
 
-        for (let i = 0; i < loginGenerator.length; i++){
-            
-            if(loginGenerator[i] === " "){
-                secondPart = loginGenerator.substr(i + 1, 5);
-                login = firstPart+secondPart;
-                login = login.toLowerCase();
-                login = login.trim();
-                if(loginDataBase.length === 0){
-                    loginDataBase.push(login);
-                }else{
-                loginDataBase.map(element => {
-                    if(element === login){
-                        numberGenerator++;
-                        loginDataBase.push(element+numberGenerator);
-                    }
-                    });
-                }
-            }
+        constructor(fullName){
+
+            this.fullName = fullName;
+            this.loginArray = [];
+
         }
 
     }
 
+    class Controller {
 
-    for (let j = 0; j< 11; j++){
 
-        myFunPrepareTheLogin();
+        constructor(){
+
+            this.loginArray = [];
+
+        }
+
+        myFunCreateLogin = fullName =>{
+
+            if(fullName.length < 8){
+
+
+                numberForToShortLogin = numberForToShortLogin + 1 * 2
+                toShortLogin = fullName+numberForToShortLogin
+
+                const firstPart = toShortLogin.substr(0,3);
+                const indexSapce = toShortLogin.indexOf(" ");
+
+                login = firstPart+toShortLogin.substr(indexSapce+1, 5);
+                login = login.toLowerCase();
+
+                if(this.loginArray.length === 0){
+                    const newLogin = new Login(login);
+                    this.loginArray.push(newLogin);
+                    console.log(this.loginArray);
+                }else{
+                    for(let v of this.loginArray){
+                        if(v.fullName === login){
+                            numberForLogin = numberForLogin + 1
+                            const newLogin = new Login(login+numberForLogin);
+                            this.loginArray.push(newLogin);
+                            break;
+                        }else{
+                            const newLogin = new Login(login);
+                            this.loginArray.push(newLogin);
+                            break;
+                        }
+                    }
+                }
+
+            } else{
+
+            const firstPart = fullName.substr(0,3);
+            const indexSapce = fullName.indexOf(" ");
+
+            login = firstPart+fullName.substr(indexSapce+1, 5);
+            login = login.toLowerCase();
+
+            if(this.loginArray.length === 0){
+                const newLogin = new Login(login);
+                this.loginArray.push(newLogin);
+                console.log(this.loginArray);
+            }else{
+                    for(let v of this.loginArray){
+                        if(v.fullName === login){
+                            numberForLogin = numberForLogin + 1
+                            const newLogin = new Login(login+numberForLogin);
+                            this.loginArray.push(newLogin);
+                            break;
+                        }else{
+                            const newLogin = new Login(login);
+                            this.loginArray.push(newLogin);
+                            break;
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+        
+        myfunDisplayAll = () => {
+
+            for(let v of this.loginArray){
+
+                console.log(v.fullName);
+
+            }
+
+
+        };
+
+
     }
 
+    class DataEntry extends Controller{
 
-    console.log(loginDataBase);
+        constructor(){
+
+            super();
+            this.myFunReadoToRun();
+
+        }
+
+        myFunReadoToRun = () =>{
+
+            while(true){
+
+                const request = String(prompt("Enter a name and last name (Exit = exit, Display = display)."));
+                if(request === 'exit'){
+                    alert("Thank you for using our application. We hope the application works as expected.");
+                    break;
+                }else if(request === 'display') {
+                    this.myfunDisplayAll();
+                }else if(request.length === 0){
+                    alert("You have tried to pass on empty value. Please enter a name and last name correctly. To complete the data input, type exit.")
+                }else{
+                    
+                    this.myFunCreateLogin(request);
+                }
+
+                }
+
+
+
+            }
+
+        }
+    
+
+    const runDataEntry = new DataEntry();
+
+
+//author info@ehalluks.fun
+
