@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@400;800&display=swap');
+    
+    /* .historyResults {float: left;}
+    .radio section {width: 50%; float: left;} */
+
+
+    h1{
+        font-family: 'Noto Sans Symbols', sans-serif;
+        font-weight: 800;
+        font-size: 50px;
+        padding: 0;
+    }
+    .wielkaLitera{
+
+        font-size: 75px;
+        text-decoration: underline #ff6600 5px;
+    
+    }
+    .radio h2{
+        margin-top: -30px;
+        font-size: 20px;
+    }    
+
+    .wrapper{
+        font-family: 'Noto Sans Symbols', sans-serif;
+        margin-left: 120px;
+        margin-top: 50px;
+
+    }
+    #textForResult{
+        width: 240px;
+        
+    }
+    #znak {
+        width: 15px;
+    }
+
+    #result {
+
+        width: 350px;
+
+    }
+
+    .radio ul li{
+        list-style: none;
+        margin-left: -35px;
+        margin-top: 5px;
+        letter-spacing: 2px;
+    }
+    .resultNext {
+
+        margin-top: 20px;
+
+    }
+
+    .value1, .value2{
+        width: 60px;
+        background-color: #d9d7d7;
+        border: 0;
+        padding: 7px;
+    }
+
+    .submit{
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 10px;
+        border: 1px solid;
+        width: 120px;
+        padding: 5px;
+        background-color: black;
+        color: white;
+        border-color: black;
+        border-radius: 7px;
+
+    }
+    .submit:hover{
+
+        background-color: #ff6600;
+        color: white;
+        font-weight: bold;
+        border-color: #ff6600;
+
+    }
+    #dodawanie li{
+        margin-top: -4px;
+        margin-left: -85px;
+        margin-top: -10px;
+    }
+
+    #dodawanie ul {
+
+        margin-top: 10px;
+        list-style: none;
+    }
+
+    .colorRadio{
+            accent-color: darkgreen;
+    }
+
+    .textForResult{
+
+        color: #ff6600;
+        font-weight: bold;
+
+    }
+    .input3{
+
+        background-color: #d9d7d7;
+        border: 0;
+        padding: 7px;
+
+    }
+    .typ{
+        color: #ff6600;
+    }
+    .historia{
+
+        font-size: 35px;
+        text-decoration: underline #ff6600 4px;
+
+    }
+
+    input:focus{ 
+    outline-offset: 5px;
+    outline-color: #ff6600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+        
+    .appearLine{
+        font-weight: bold;
+        color: #ff6600;
+    }
+    .pokazWyraznie{
+        font-weight: bold;
+    }
+
+
+</style>
+
+<body>
+
+    <div class="wrapper">
+
+        <header>
+            <h1>
+                <span class="wielkaLitera">K</span>alkulator
+            </h1>
+        </header>
+        <section class="radio">
+            <h2>Wybierz <span class="typ">typ</span> działania:</h2> 
+            <ul>
+                <li><input type="radio" name="radio" id="radio1" value="dodaj" class="colorRadio">Dodawanie</li>
+                <li><input type="radio" name="radio" id="radio2" value="odejmij" class="colorRadio" >Odejmowanie</li>
+                <li><input type="radio" name="radio" id="radio3" value="pomnoz" class="colorRadio" >Mnożenie</li>
+                <li><input type="radio" name="radio" id="radio4" value="podziel" class="colorRadio" >Dzielenie</li>
+            </ul>
+        </section>
+        <section class="values-results">
+            <form id="form">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" id="value1" class="value1">
+                        </td>
+                        <td id="znak">
+                        </td>
+                        <td>
+                            <input type="text" id="value2" class="value2">
+                        </td>
+                        <td>
+                            <button type="submit" class="submit">⇙ Oblicz</button>
+                        </td>  
+                    </tr>
+                </table>
+                <table class="resultNext">
+                    <tr>
+                        <td id="textForResult" class="textForResult">
+                            Oczekiwanie na wynik
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="result" class="input3">
+                        </td> 
+                    </tr>
+                </table>
+            </form>
+        </section>
+        <section class="historyResults">
+            <h2><span class="historia">H</span>istoria wyników:</h2> 
+            <table>
+                <tr>
+                    <td>
+                        <ul id="dodawanie"></ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+    <script>
+
+        const form = document.querySelector('#form');
+        const dodawanie = document.querySelector('#dodawanie');
+        const radiosChoise = document.querySelectorAll('input[name="radio"]');
+        const valueInWynik = document.querySelector('#textForResult');
+        const znak = document.querySelector('#znak');
+        const input1 = document.querySelector('#value1');
+        const input2 = document.querySelector('#value2');
+        const input3 = document.querySelector('#result');
+        const radio1 = document.querySelector('#radio1');
+        const radio2 = document.querySelector('#radio2');
+        const radio3 = document.querySelector('#radio3');
+        const radio4 = document.querySelector('#radio4');
+
+        let typOfExpression = '';
+        let historyResult = [];
+        let counter = 0;
+
+        // localStorage.getItem(JSON.parse(historyResult)) ?? [];
+        
+        myFunDisplayChar = (event) => {
+            for(let v of radiosChoise){
+                if(v.checked){
+                    typOfExpression = v.value;
+                    if(typOfExpression === 'dodaj'){
+                        znak.innerText = '+';
+                    }else if(typOfExpression === 'odejmij'){
+                        znak.innerText = '—';
+                    }else if(typOfExpression === 'pomnoz'){
+                        znak.innerText = '×';
+                    }else if(typOfExpression === 'podziel'){
+                        znak.innerText = '÷';
+                    }
+                    break;
+                }
+            }
+        }
+        
+        myFunSimple = some => {
+            event.preventDefault();
+            for(let v of radiosChoise){
+                if(v.checked){
+                    typOfExpression = v.value;
+                    break;
+                }
+            }
+        
+            setTimeout(() => {
+
+            // alert("WARRING: Dane w formularzu zostaną wyczyszczone ale bez obaw. Znajdzie je w histori poniżej.")
+            
+            if(typOfExpression === 'dodaj'){
+
+                const newResult = {
+
+                value1: Number(input1.value),
+                value2: Number(input2.value),
+                result: Number(input1.value) + Number(input2.value),
+                typ: 'Dodawanie',
+
+                };
+
+                historyResult.push(newResult);
+                console.log();
+                // localStorage.setItem(JSON.stringify(historyResult));
+
+                dodawanie.innerHTML += `
+                <ul class="appearAll">
+                    <li><span class="pokazWyraznie">Lp: </span>${++counter}</li>
+                    <li><span class="pokazWyraznie">Typ operacji: </span>${historyResult[historyResult.length - 1].typ}</li>
+                    <li><span class="pokazWyraznie">Wyrażenie: </span>${historyResult[historyResult.length - 1].value1} + ${historyResult[historyResult.length - 1].value2}</li>
+                    <li><span class="pokazWyraznie">Wynik działania: </span>${historyResult[historyResult.length - 1].result}</li>
+                    <li class="appearLine">_____________________</li>
+                </ul>
+                `
+                input1.value = '';
+                input2.value = '';
+                input3.value = "Nie martw się, wyniki są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                valueInWynik.innerText = "Oczekiwanie na wynik";
+
+            for(let v of radiosChoise){
+                if(v.checked){
+                    v.checked = false;
+                    break;
+                }
+            }
+
+            setTimeout(() => {
+
+            input3.value = "";
+
+            }, 3000);
+
+
+            }else if(typOfExpression === 'odejmij'){
+
+                const newResult = {
+
+                value1: Number(input1.value),
+                value2: Number(input2.value),
+                result: Number(input1.value) - Number(input2.value),
+                typ: 'Odejmowanie',
+
+            };
+
+                historyResult.push(newResult);
+                // localStorage.setItem(JSON.stringify(historyResult));
+
+                dodawanie.innerHTML += `
+                <ul class="appearAll">
+                    <li><span class="pokazWyraznie">Lp: </span>${++counter}</li>
+                    <li><span class="pokazWyraznie">Typ operacji: </span>${historyResult[historyResult.length - 1].typ}</li>
+                    <li><span class="pokazWyraznie">Wyrażenie: </span>${historyResult[historyResult.length - 1].value1} — ${historyResult[historyResult.length - 1].value2}</li>
+                    <li><span class="pokazWyraznie">Wynik działania: </span>${historyResult[historyResult.length - 1].result}</li>
+                    <li class="appearLine">_____________________</li>
+                </ul>
+                `
+                input1.value = '';
+                input2.value = '';
+                input3.value = "Nie martw się, wyniki są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                valueInWynik.innerText = "Oczekiwanie na wynik";
+
+                for(let v of radiosChoise){
+                if(v.checked){
+                    v.checked = false;
+                    break;
+                }
+                }
+
+                setTimeout(() => {
+
+                input3.value = "";
+
+                }, 3000);
+
+
+            }else if(typOfExpression === 'pomnoz'){
+
+                const newResult = {
+
+                value1: Number(input1.value),
+                value2: Number(input2.value),
+                result: Number(input1.value) * Number(input2.value),
+                typ: 'Mnożenie',
+
+                };
+
+                historyResult.push(newResult);
+                // localStorage.setItem(JSON.stringify(historyResult));
+
+                dodawanie.innerHTML += `
+                <ul class="appearAll">
+                    <li><span class="pokazWyraznie">Lp: </span>${++counter}</li>
+                    <li><span class="pokazWyraznie">Typ operacji: </span>${historyResult[historyResult.length - 1].typ}</li>
+                    <li><span class="pokazWyraznie">Wyrażenie: </span>${historyResult[historyResult.length - 1].value1} × ${historyResult[historyResult.length - 1].value2}</li>
+                    <li><span class="pokazWyraznie">Wynik działania: </span>${historyResult[historyResult.length - 1].result}</li>
+                    <li class="appearLine">_____________________</li>
+                </ul>
+                `
+                input1.value = '';
+                input2.value = '';
+                input3.value = "Nie martw się wyniki, są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                valueInWynik.innerText = "Oczekiwanie na wynik"
+
+                for(let v of radiosChoise){
+                if(v.checked){
+                    v.checked = false;
+                    break;
+                }
+                }
+
+                setTimeout(() => {
+
+                input3.value = "";
+
+                }, 3000);
+
+            }else if(typOfExpression === 'podziel'){
+
+                if(Number(input2.value) === 0){
+                    return;
+                }
+
+                const newResult = {
+
+                value1: Number(input1.value),
+                value2: Number(input2.value),
+                result: Number(input1.value) / Number(input2.value),
+                typ: 'Dzielenie',
+
+                };
+
+                historyResult.push(newResult);
+                // localStorage.setItem(JSON.stringify(historyResult));
+
+                dodawanie.innerHTML += `
+                <ul class="appearAll">
+                    <li><span class="pokazWyraznie">Lp: </span>${++counter}</li>
+                    <li><span class="pokazWyraznie">Typ operacji: </span>${historyResult[historyResult.length - 1].typ}</li>
+                    <li><span class="pokazWyraznie">Wyrażenie: </span>${historyResult[historyResult.length - 1].value1} ÷ ${historyResult[historyResult.length - 1].value2}</li>
+                    <li><span class="pokazWyraznie">Wynik działania: </span>${historyResult[historyResult.length - 1].result}</li>
+                    <li class="appearLine">_____________________</li>
+                </ul>
+                `
+                input1.value = '';
+                input2.value = '';
+                input3.value = "Nie martw się wyniki, są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                valueInWynik.innerText = "Oczekiwanie na wynik"
+
+                setTimeout(() => {
+
+                    input3.value = "";
+
+                }, 3000)
+
+                for(let v of radiosChoise){
+                if(v.checked){
+                    v.checked = false;
+                    break;
+                }
+                }
+
+
+            }
+
+            setTimeout(() => {
+
+            input3.value = "";
+
+            }, 3000);
+
+            }, 3000);
+
+        switch (typOfExpression){
+
+            case 'dodaj':
+            input3.value = `Wyrażenie ${input1.value} + ${input2.value} = ${Number(input1.value) + Number(input2.value)}`
+            valueInWynik.innerText = 'Wynik dla operacji dodawania ↴ '
+
+            break;
+            case 'odejmij': 
+            input3.value = `Wyrażenie ${input1.value} — ${input2.value} = ${Number(input1.value) - Number(input2.value)}`
+            valueInWynik.innerText = 'Wynik dla operacji odejmowania ↴ '
+
+            break;
+            case 'pomnoz' : 
+            input3.value = `Wyrażenie ${input1.value} × ${input2.value} = ${Number(input1.value) * Number(input2.value)}`
+            valueInWynik.innerText = 'Wynik dla operacji mnożenia ↴ '
+
+            break;
+            case 'podziel':
+            if(input2.value === "0"){
+                input3.value = "Nie można dzielić przez zero. Popraw i oblicz ponownie"
+                input1.value = '';
+                input2.value = '';
+                setTimeout(() => {
+                input3.value = "";
+                }, 5000);
+                valueInWynik.innerText = "Oczekiwanie na wynik"
+                break;
+            } else{    
+            input3.value = `Wyrażenie ${input1.value} ÷ ${input2.value} = ${Number(input1.value) / Number(input2.value)}`
+            valueInWynik.innerText = 'Wynik dla operacji dzielenia ↴'
+            }
+            break;
+            default:break;
+
+        }
+
+        }
+
+        form.addEventListener('submit', myFunSimple);
+        radio1.addEventListener('click', myFunDisplayChar);
+        radio2.addEventListener('click', myFunDisplayChar);
+        radio3.addEventListener('click', myFunDisplayChar);
+        radio4.addEventListener('click', myFunDisplayChar);
+
+    </script>
+</body>
+
+</html>
