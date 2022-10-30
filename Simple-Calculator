@@ -283,21 +283,24 @@
             let checkValue = Number(input1.value) * 1;
             let checkValue2 = Number(input2.value) * 1;
 
-            if(isNaN(checkValue)){
-
+            if(input1.value < 1 || input2.length < 1){
+                return alert("Wartość pola nie może być pusta");
+            } else if(isNaN(checkValue)){
                 return alert("Wartość pola musi być liczbą");
-
             }else if(isNaN(checkValue2)){
-
                 return alert("Wartość pola musi być liczbą");
             }
-
 
             event.preventDefault();
             for(let v of radiosChoise){
                 if(v.checked){
                     typOfExpression = v.value;
                     break;
+                }else{
+                    input1.value = '';
+                    input2.value = '';
+                    return alert("Zaznacz typ działania");
+                    
                 }
             }
         
