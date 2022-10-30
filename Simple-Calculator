@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@400;800&display=swap');
     
-    /* .historyResults {float: left;}
-    .radio section {width: 50%; float: left;} */
-
 
     h1{
         font-family: 'Noto Sans Symbols', sans-serif;
         font-weight: 800;
         font-size: 50px;
         padding: 0;
+        
+
     }
     .wielkaLitera{
 
         font-size: 75px;
         text-decoration: underline #ff6600 5px;
+        
     
     }
     .radio h2{
@@ -37,6 +37,7 @@
         font-family: 'Noto Sans Symbols', sans-serif;
         margin-left: 120px;
         margin-top: 50px;
+        
 
     }
     #textForResult{
@@ -58,6 +59,8 @@
         margin-left: -35px;
         margin-top: 5px;
         letter-spacing: 2px;
+        border-radius: 20px;
+        width: 25%;
     }
     .resultNext {
 
@@ -181,7 +184,8 @@
                         </td>
                         <td>
                             <button type="submit" class="submit">⇙ Oblicz</button>
-                        </td>  
+                        </td>
+                        <td id="notification"></td>  
                     </tr>
                 </table>
                 <table class="resultNext">
@@ -207,6 +211,7 @@
                     </td>
                 </tr>
             </table>
+            <form id="wyczyscHistorie"></form>
         </section>
     </div>
 
@@ -224,12 +229,36 @@
         const radio2 = document.querySelector('#radio2');
         const radio3 = document.querySelector('#radio3');
         const radio4 = document.querySelector('#radio4');
+        const wyczysc = document.querySelector('#wyczyscHistorie');
+        const notification = document.querySelector('#notification');
 
         let typOfExpression = '';
         let historyResult = [];
         let counter = 0;
+        let flaga = false;
 
-        // localStorage.getItem(JSON.parse(historyResult)) ?? [];
+        if(historyResult.length === 0){
+            const dataOutOfRefresh = JSON.parse(localStorage.getItem("RESUTLS")) ?? [];
+
+            for(let v of dataOutOfRefresh){
+                dodawanie.innerHTML += `
+                <ul class="appearAll">
+                    <li><span class="pokazWyraznie">Lp: </span>${++counter}</li>
+                    <li><span class="pokazWyraznie">Typ operacji: </span>${v.typ}</li>
+                    <li><span class="pokazWyraznie">Wyrażenie: </span>${v.value1} + ${v.value2}</li>
+                    <li><span class="pokazWyraznie">Wynik działania: </span>${v.result}</li>
+                    <li class="appearLine">_____________________</li>
+                </ul>
+                `  
+                if(flaga === false){
+                    wyczysc.innerHTML += `<button type='submit' class="submit">Usun historię</button>`;
+                    flaga = true;
+                }
+                
+            }
+        }
+
+        
         
         myFunDisplayChar = (event) => {
             for(let v of radiosChoise){
@@ -250,6 +279,20 @@
         }
         
         myFunSimple = some => {
+
+            let checkValue = Number(input1.value) * 1;
+            let checkValue2 = Number(input2.value) * 1;
+
+            if(isNaN(checkValue)){
+
+                return alert("Wartość pola musi być liczbą");
+
+            }else if(isNaN(checkValue2)){
+
+                return alert("Wartość pola musi być liczbą");
+            }
+
+
             event.preventDefault();
             for(let v of radiosChoise){
                 if(v.checked){
@@ -259,8 +302,6 @@
             }
         
             setTimeout(() => {
-
-            // alert("WARRING: Dane w formularzu zostaną wyczyszczone ale bez obaw. Znajdzie je w histori poniżej.")
             
             if(typOfExpression === 'dodaj'){
 
@@ -274,8 +315,8 @@
                 };
 
                 historyResult.push(newResult);
-                console.log();
-                // localStorage.setItem(JSON.stringify(historyResult));
+                localStorage.setItem("RESUTLS",JSON.stringify(historyResult));
+
 
                 dodawanie.innerHTML += `
                 <ul class="appearAll">
@@ -286,9 +327,18 @@
                     <li class="appearLine">_____________________</li>
                 </ul>
                 `
+                
+                
                 input1.value = '';
                 input2.value = '';
-                input3.value = "Nie martw się, wyniki są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                if(historyResult.length > 1){
+                    input3.value = '';
+                }else{
+                    input3.value = "Nie martw się, wyniki są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                    if(flaga === false){
+                        wyczysc.innerHTML += `<button type='submit' class="submit">Usun historię</button>`;
+                    }
+                }
                 valueInWynik.innerText = "Oczekiwanie na wynik";
 
             for(let v of radiosChoise){
@@ -317,7 +367,7 @@
             };
 
                 historyResult.push(newResult);
-                // localStorage.setItem(JSON.stringify(historyResult));
+                localStorage.setItem("RESUTLS",JSON.stringify(historyResult));
 
                 dodawanie.innerHTML += `
                 <ul class="appearAll">
@@ -330,7 +380,14 @@
                 `
                 input1.value = '';
                 input2.value = '';
-                input3.value = "Nie martw się, wyniki są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                if(historyResult.length > 1){
+                    input3.value = '';
+                }else{
+                    input3.value = "Nie martw się, wyniki są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                    if(flaga === false){
+                        wyczysc.innerHTML += `<button type='submit' class="submit">Usun historię</button>`;
+                    }                    
+                }
                 valueInWynik.innerText = "Oczekiwanie na wynik";
 
                 for(let v of radiosChoise){
@@ -359,7 +416,7 @@
                 };
 
                 historyResult.push(newResult);
-                // localStorage.setItem(JSON.stringify(historyResult));
+                localStorage.setItem("RESUTLS",JSON.stringify(historyResult));
 
                 dodawanie.innerHTML += `
                 <ul class="appearAll">
@@ -372,7 +429,14 @@
                 `
                 input1.value = '';
                 input2.value = '';
-                input3.value = "Nie martw się wyniki, są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                if(historyResult.length > 1){
+                    input3.value = '';
+                }else{
+                    input3.value = "Nie martw się, wyniki są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                    if(flaga === false){
+                        wyczysc.innerHTML += `<button type='submit' class="submit">Usun historię</button>`;
+                    }                    
+                }
                 valueInWynik.innerText = "Oczekiwanie na wynik"
 
                 for(let v of radiosChoise){
@@ -404,7 +468,7 @@
                 };
 
                 historyResult.push(newResult);
-                // localStorage.setItem(JSON.stringify(historyResult));
+                localStorage.setItem("RESUTLS",JSON.stringify(historyResult));
 
                 dodawanie.innerHTML += `
                 <ul class="appearAll">
@@ -417,7 +481,14 @@
                 `
                 input1.value = '';
                 input2.value = '';
-                input3.value = "Nie martw się wyniki, są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                if(historyResult.length > 1){
+                    input3.value = '';
+                }else{
+                    input3.value = "Nie martw się, wyniki są poniżej ʕ•́ᴥ•̀ʔっ♡";
+                    if(flaga === false){
+                        wyczysc.innerHTML += `<button type='submit' class="submit">Usun historię</button>`;
+                    }                    
+                }
                 valueInWynik.innerText = "Oczekiwanie na wynik"
 
                 setTimeout(() => {
@@ -444,7 +515,7 @@
 
             }, 3000);
 
-        switch (typOfExpression){
+            switch (typOfExpression){
 
             case 'dodaj':
             input3.value = `Wyrażenie ${input1.value} + ${input2.value} = ${Number(input1.value) + Number(input2.value)}`
@@ -482,11 +553,18 @@
 
         }
 
+        myFunClearContents = event => {
+            dodawanie.remove()
+            localStorage.removeItem("RESUTLS")
+            flaga === false;
+        }
+
         form.addEventListener('submit', myFunSimple);
         radio1.addEventListener('click', myFunDisplayChar);
         radio2.addEventListener('click', myFunDisplayChar);
         radio3.addEventListener('click', myFunDisplayChar);
         radio4.addEventListener('click', myFunDisplayChar);
+        wyczysc.addEventListener('submit', myFunClearContents);
 
     </script>
 </body>
