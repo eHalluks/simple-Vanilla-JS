@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+    body{
+        font-family: "Segoe UI";
+    }
+
+    .wrapper{
+        margin-left: 120px;
+        margin-top: 50px;
+    }
+    button{
+        width: 60px;
+    }
+    table{
+        text-align: center;
+    }
+    .odsun{
+
+        margin-top: 50px;
+    }
+    input{
+        width: 90px;
+    }
+    .lewo{
+        text-align: left;
+    }
+    .szerokoscBtn{
+        width: 120px;
+
+    }
+
+
+</style>
+
+<body>
+
+    <div class="wrapper">
+
+        <div>
+            <h1>
+                Jak się dziś czujesz?
+            </h1>
+        </div>
+
+        <div>
+            <h2>Statystyki:</h2>
+            <table>
+                <tr>
+                    <td>
+                        <p class="dol" id="pDobrze"></p>
+                    </td>
+                    <td>
+                        <p class="dol" id="pZle"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="dobrze" id="dobrze">
+                            <button type="button">Dobrze</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="zle" id="zle">
+                            <button type="button">Źle</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="odsun">
+                <tr>
+                    <td>
+                        <form id="addValue">
+                            <input type="text" placeholder="Podaj liczbę">
+                            <button type="submit">Dodaj</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lewo">
+                        <p id="displayValue"></p>
+                        <p id="displayValue2"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lewo">
+                    </td>
+                </tr>
+            </table>
+            <div id="remove">
+            <button id="btn" type="submit" class="szerokoscBtn">Wyczysc sume</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dobrze  = document.querySelector('#dobrze');
+        const zle  = document.querySelector('#zle');
+        const pDobrze  = document.querySelector('#pDobrze');
+        const pZle  = document.querySelector('#pZle');
+        const addValue = document.querySelector('#addValue');
+        const inputValue = document.querySelector('input');
+        const displayValue = document.querySelector('#displayValue');
+        const displayValue2 = document.querySelector('#displayValue2');
+        const remove = document.querySelector('#remove');
+
+        let counterDobrze = 0;
+        let counterzle = 0;
+        const results = [];
+        const results2 = [];
+        inputValue.value = '';
+        let zmienna = 0;
+
+        myFunDisplayStartResult = () => {
+            const zmienna1 = JSON.parse(localStorage.getItem('resultsDobrze'));
+            const zmienna2 =  JSON.parse(localStorage.getItem('resultsZle'));
+            const zmienna3 = JSON.parse(localStorage.getItem('reduceAll'));
+            if(zmienna1 !== null){
+                pDobrze.innerText = zmienna1.quantity;
+            }else{
+                pDobrze.innerText = 0;
+            }
+            if(zmienna2 !== null){
+                pZle.innerText = zmienna2.quantity;
+            }else{
+                pZle.innerText = 0;
+            }
+            if(zmienna3 !== null){
+                displayValue.innerText = `Ostatnia suma: ${zmienna3}`;
+            }else {
+                displayValue.innerText = "";
+            }
+        }
+        myFunAddDobrze = event =>{
+            pDobrze.innerText = `${++counterDobrze}`;
+            const resultDobrze = {quantity: counterDobrze};
+            results.push(resultDobrze,);
+            for(let v of results){
+                if(v === resultDobrze){
+                    v.quantity = counterDobrze
+                    localStorage.setItem('resultsDobrze', JSON.stringify(v));
+                }
+            }
+        }
+
+        myFunAddZle = event => {
+            pZle.innerText = `${++counterzle}`;
+            const resultZle = {quantity: counterzle};
+            results.push(resultZle,);
+            for(let v of results){
+                if(v === resultZle){
+                    v.quantity = counterzle
+                    localStorage.setItem('resultsZle', JSON.stringify(v));
+                }
+            }
+        }
+        myFunDisplay = event =>{
+            event.preventDefault();
+            if(inputValue.value === ""){
+                setTimeout(() =>{
+                    inputValue.value = '';
+                    inputValue.focus();
+                }, 1000)
+                inputValue.value = 'Field is empty';
+                return;
+            }else if(isNaN(Number(inputValue.value))){
+                setTimeout(() =>{
+                    inputValue.value = '';
+                    inputValue.focus();
+                }, 1000)
+                inputValue.value = 'Not a number';
+                return;
+            }
+            if(JSON.parse(localStorage.getItem('reduceAll')) === null){
+                results2.push(Number(inputValue.value));
+                zmienna = results2.reduce((previousValue, currentValue) => previousValue + currentValue);
+                localStorage.setItem('reduceAll', JSON.stringify(String(zmienna)));
+                displayValue.innerText = `Pobrana wartość: ${Number(inputValue.value)} `
+                displayValue2.innerText = `Aktualna suma: ${zmienna}`
+                inputValue.value = '';
+
+            }else{
+                let zmienna2 = Number(JSON.parse(localStorage.getItem('reduceAll')));
+                zmienna = Number(inputValue.value) + zmienna2
+                localStorage.setItem('reduceAll', JSON.stringify(String(zmienna)));
+                displayValue.innerText = `Pobrana wartość: ${Number(inputValue.value)} `
+                displayValue2.innerText = `Aktualna suma: ${zmienna}`
+                inputValue.value = '';
+                inputValue.focus();
+            }
+        }
+        myFunClearLocalStorage = event => {
+
+            localStorage.removeItem('reduceAll');
+            inputValue.value = '';
+            inputValue.focus();
+            location.reload(true);
+
+        };
+
+        myFunDisplayStartResult();
+        dobrze.addEventListener('click', myFunAddDobrze);
+        zle.addEventListener('click', myFunAddZle);
+        addValue.addEventListener('submit', myFunDisplay);
+        remove.addEventListener('click', myFunClearLocalStorage);
+
+    </script>
+</body>
+</html>
