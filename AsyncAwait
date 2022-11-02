@@ -86,6 +86,28 @@
         color: #551A8B;
         font-weight: bold;
     }
+    input{
+        margin-right: 100%;
+    }
+    .temp, .temp2{
+        background-color: white;
+    }
+    button, input{
+        margin-right: 100%;
+        margin-bottom: 15px;
+    }
+    button{
+        background-color: #551A8B;
+        width: 95px;
+        border-color: #551A8B;
+        color: white;
+
+    }
+    button:hover{
+        background-color: #eb346e;
+        border-color: #eb346e;
+    }
+
 
 </style>
 
@@ -96,6 +118,10 @@
 <table id="textApi">
     <tr class="nieStyluj" id="nieStyluj">
         <th id="styluwa" class="nieStyluj"colspan="13"><a class="noneMe" href="https://swapi.dev/" target="_blank" rel="noopener noreferrer">SWAPI DEV</a></th>
+    </tr>
+    <tr>
+        <th class="temp2"><input type="text" placeholder="Type the text..."></th>
+        <th class="temp"><button type="button" value="findMe">Znajdź</button></th>
     </tr>
     <tr>
         <th class="styluj">L.p</th>
@@ -117,14 +143,15 @@
 
 
 <script>
-        let counter = 0;
+        const inputValue = document.querySelector('input');
         const dataTable = document.querySelector('#textApi');
+        let counter = 0;
+        let findMeValue = null;
         async function myFun() {
             const reposnse = await fetch('https://swapi.dev/api/people/');
             const dataReposns = await reposnse.json();
-
+            findMeValue = dataReposns;
             dataReposns.results.forEach(element => {
-                console.log(element)
                 dataTable.innerHTML += `
                 <tr id="hoverMe">
                     <td>
@@ -172,6 +199,7 @@
         }
 
         myFun();
+
 
 </script>
 </body>
