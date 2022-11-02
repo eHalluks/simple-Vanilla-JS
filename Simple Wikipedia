@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        font-family: "Segoe UI";
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70vw;
+    }
+    h1{
+       font-size: 65px
+    }
+    .jakies{
+        margin-left: auto;
+        margin-right: auto;
+        width: 50vw;
+        margin-top: 50px;
+    }
+    th{
+        background-color: lightgray;
+        padding: 15px;
+        width: 180px;
+    }
+    td{
+        border: 1px solid;
+    }
+    .nieznaleziono{
+        color: red;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+    }
+    .clearContents2{
+        border: 0px;
+    }
+
+</style>
+<body>
+<div class="wrapper">
+        <div>
+            <h1>Wikipedia</h1>
+        </div>
+    <form id="wikipedia">
+        <input type="text" placeholder="Wprowadź views">
+        <button type="submit">Znajdź</button>
+        <button type="button" value="clear">Wyświetl listę views</button>
+    </form>
+        <p class="nieznaleziono" id="nieznaleziono"></p>
+    <table class="jakies" id="jakies">
+        <tr>
+            <th>project</th>
+            <th>article</th>
+            <th>granularity</th>
+            <th>timestamp</th>
+            <th>access</th>
+            <th>agent</th>
+            <th>views</th>
+        </tr>
+    </table>
+</div>
+<script>const jakies = document.querySelector('#jakies');
+const wikipedia = document.querySelector('#wikipedia');
+const inputValue = document.querySelector('input');
+const nieznaleziono = document.querySelector('#nieznaleziono');
+
+
+let zmienna = [];
+let counter = 0;
+
+const test = fetch('https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/Tiger_King/daily/20210901/20210930')
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        data.items.map(element => {
+            return zmienna.push(element);
+        })
+    })
+    .catch(() => {
+        alert("error 500")
+    })
+
+myFunFind = event => {
+
+    event.preventDefault();
+
+        if(inputValue.value.length === 0){
+            setTimeout(() => {
+                nieznaleziono.innerText = '';
+            }, 2000)
+            inputValue.value = '';
+            inputValue.focus();
+            return nieznaleziono.innerText = "Filed can not be empty";
+        }else if (isNaN(Number(inputValue.value))) {
+            setTimeout(() => {
+                nieznaleziono.innerText = '';
+            }, 2000)
+            inputValue.value = '';
+            inputValue.focus();
+            return nieznaleziono.innerText = "Not a number";
+        }
+
+
+        for (let v of zmienna) {
+            if (v.views === Number(inputValue.value)) {
+                jakies.innerHTML += `
+            <tr>
+                <td>${v.project}</td>
+                <td>${v.article}</td>
+                <td>${v.granularity}</td>
+                <td>${v.timestamp}</td>
+                <td>${v.access}</td>
+                <td>${v.agent}</td>
+                <td><strong>${v.views}</strong></td>
+           </tr>
+           `
+                counter = 1;
+                inputValue.value = '';
+                inputValue.focus();
+                setTimeout(() => {
+                    jakies.removeChild(jakies.lastElementChild);
+                    counter = 0;
+                }, 4000);
+            }
+        }
+
+        if (counter === 0) {
+            nieznaleziono.innerText = `Brak wyników dla podanego parametru`
+            inputValue.value = '';
+            inputValue.focus();
+            setTimeout(() => {
+                nieznaleziono.remove();
+            }, 2000)
+        }
+
+}
+
+myFunDisplay = event => {
+
+    let jakasZmienna = null;
+    jakasZmienna = document.querySelectorAll('#clearContetns2');
+    jakasZmienna.forEach(element => {element.remove()})
+
+
+    const checkBtn = event.target.value
+    if(checkBtn === 'clear'){
+        zmienna.forEach(element =>{
+            jakies.innerHTML += `
+            <tr>
+                <td id="clearContetns2" class="clearContents2"></td>
+                <td id="clearContetns2" class="clearContents2"></td>
+                <td id="clearContetns2" class="clearContents2"></td>
+                <td id="clearContetns2" class="clearContents2"></td>
+                <td id="clearContetns2" class="clearContents2"></td>
+                <td id="clearContetns2" class="clearContents2"></td>
+                <td id="clearContetns2"><strong>${element.views}</strong></td>
+           </tr>`
+        });
+
+        setTimeout(() => {
+            let jakasZmienna = document.querySelectorAll('#clearContetns2');
+            jakasZmienna.forEach(element => {element.remove()})
+            jakasZmienna = null;
+        }, 5000);
+    }
+
+}
+
+wikipedia.addEventListener('submit', myFunFind);
+wikipedia.addEventListener('click', myFunDisplay);
+</script>
+</body>
+</html>
