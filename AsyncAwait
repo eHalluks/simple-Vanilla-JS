@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+    #textApi {
+        font-family: 'Mukta', sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+
+
+    #textApi td{
+        border: 1px solid #ddd;
+        padding: 8px;
+
+    }
+
+    #textApi tr:nth-child(even){
+        background-color: #f2f2f2;
+
+    }
+
+    #textApi tr:hover {background-color: #ddd;}
+
+    .styluj {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #eb346e;
+        color: white;
+        text-align: center;
+        font-weight: normal;
+        border: 1px solid #ddd;
+    }
+    .noneMe{
+        text-decoration: none;
+        font-size: 65px;
+    }
+
+    #textApi.nieStyluj{
+        background-color: white;
+
+    }
+
+    #nieStyluj :hover{
+        background-color: white;
+    }
+
+    img{
+    width: 250px;
+    height: auto;
+    margin-left: 80px;
+    margin-right: auto;
+    text-align: center;
+    }
+    #styluwa a:hover{
+        font-size: 70px;
+        font-weight: bold;
+
+    }
+    #styluwa a:focus{
+        color: black;
+    }
+    #styluwa a:visited {
+        color: #551A8B;
+    }
+    .actionMe{
+        text-decoration: none;
+        color: black;
+    }
+
+    .actionMe:hover{
+        color: #551A8B;
+        font-weight: bold;
+    }
+
+</style>
+
+<body>
+<div>
+    <a href="https://swapi.dev/" target="_blank" rel="noopener noreferrer"><img src="https://static.wixstatic.com/media/e45159_07020f8f10524181829ada7f4f3e948c~mv2.jpg/v1/fill/w_250,h_120,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/SWAPI_HORIZONTAL_LOGO_PURPLE_RGB.jpg" alt="Logo swapi"></a>
+</div>
+<table id="textApi">
+    <tr class="nieStyluj" id="nieStyluj">
+        <th id="styluwa" class="nieStyluj"colspan="13"><a class="noneMe" href="https://swapi.dev/" target="_blank" rel="noopener noreferrer">SWAPI DEV</a></th>
+    </tr>
+    <tr>
+        <th class="styluj">L.p</th>
+        <th class="styluj">Name</th>
+        <th class="styluj">Height</th>
+        <th class="styluj">Mass</th>
+        <th class="styluj">Hair color</th>
+        <th class="styluj">Skin color</th>
+        <th class="styluj">Eye color</th>
+        <th class="styluj">Birth year</th>
+        <th class="styluj">Gender</th>
+        <th class="styluj">Homeworld</th>
+        <th class="styluj">Created</th>
+        <th class="styluj">Edited</th>
+        <th class="styluj">Url</th>
+    </tr>
+</table>
+
+
+
+<script>
+        let counter = 0;
+        const dataTable = document.querySelector('#textApi');
+        async function myFun() {
+            const reposnse = await fetch('https://swapi.dev/api/people/');
+            const dataReposns = await reposnse.json();
+
+            dataReposns.results.forEach(element => {
+                console.log(element)
+                dataTable.innerHTML += `
+                <tr id="hoverMe">
+                    <td>
+                        ${++counter}
+                    </td>
+                    <td>
+                        ${element.name}
+                    </td>
+                     <td>
+                        ${element.height}cm
+                    </td>
+                     <td>
+                        ${element.mass}kg
+                    </td>
+                     <td>
+                        ${element.hair_color}
+                    </td>
+                     <td>
+                        ${element.skin_color}
+                    </td>
+                     <td>
+                        ${element.eye_color}
+                    </td>
+                     <td>
+                        ${element.birth_year}
+                    </td>
+                     <td>
+                        ${element.gender}
+                    </td>
+                   <td>
+                        <a class="actionMe" href="${element.homeworld}" target="_blank" rel="noopener noreferrer">${element.homeworld}</a>
+                    </td>
+                    <td>
+                        ${element.created}
+                    </td>
+                    <td>
+                        ${element.edited}
+                    </td>
+                     <td>
+                        <a class="actionMe" href="${element.url}">${element.url}</a>
+                    </td>
+                </tr>
+                `
+            })
+        }
+
+        myFun();
+
+</script>
+</body>
+</html>
