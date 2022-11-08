@@ -1,0 +1,202 @@
+//html
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+<body>
+<section class="products">
+    <h1>Lista produktów</h1>
+    <ul class="products-list">
+        <li>
+            <strong>Ogórki kiszone</strong> - 9.99zł <button class="btn-buy-product" data-name="Ogórki Kiszone" data-price="9.99">Kup</button>
+        </li>
+        <li>
+            <strong>Pomidorki</strong> - 7.50zł <button class="btn-buy-product" data-name="Tomato" data-price="7.5">Kup</button>
+        </li>
+        <li>
+            <strong>Mercedes C Klasa</strong> - 3.99zł <button class="btn-buy-product" data-name="Ziemniaki" data-price="3.99">Kup</button>
+        </li>
+    </ul>
+</section>
+<section class="basket">
+    <h1>Koszyk</h1>
+    <ul class="basket-List"></ul>
+    <button class="btn-buy-all" disabled>Złóż zamówienie</button>
+</section>
+<section class="admin-add-product">
+    <h1>Administracja: dodaj produkt</h1>
+    <form class="form-add-product">
+        <input
+                name="product-Name"
+                type="text"
+                placeholder="podaj nazwę"
+                required
+        >
+        <input
+                name="product-Price"
+                type="number"
+                placeholder="podaj cenę"
+                required
+        >
+        <button type="submit">Dodaj</button>
+    </form>
+</section>
+<script src="src/basket.js"></script>
+<script src="src/ui.js"></script>
+<script src="src/adminUi.js"></script>
+</body>
+</html>
+
+
+//src <script src="src/basket.js"></script>
+
+const buyBtns = [...document.querySelectorAll('[data-name]')];
+const basketUl = document.querySelector('.basket-List');
+const buyAllBtn = document.querySelector('.btn-buy-all');
+
+const basket = new Basket();
+
+const removeItem = event => {
+
+    const id = Number(event.target.dataset.id);
+    basket.remove(id);
+    createBasketUi();
+
+}
+
+const createBasketUi = () => {
+    basketUl.innerText = ''; //czyszcze liste
+    for (const {id, text} of basket.getBasketSummary()) {
+        // const {id, text} = oneProductInfo; standardowa destrukturyzacja
+        const newLi = document.createElement('li');
+        newLi.innerText = text; //zdestrukturyzowany parametr
+        newLi.addEventListener('click', removeItem);
+        newLi.dataset.id = id; //zdestrukturyzowany parametr
+        basketUl.appendChild(newLi);
+    }
+    const basketTotalValue = basket.getTotalValue();
+    buyAllBtn.innerText = `Złóż zamówienie na kwotę ${basketTotalValue}zł`
+    buyAllBtn.disabled = basketTotalValue === 0;
+    // if(basketTotalValue > 0){
+    //     // buyAllBtn.removeAttribute('disabled');
+    //     buyAllBtn.disabled = false;
+    // }else{
+    //     // buyAllBtn.setAttribute('disabled', 'true');
+    //     buyAllBtn.disabled = true;
+    // }
+};
+
+const addProductToBasket = event => {
+    const name = event.target.dataset.name;
+    const price = Number(event.target.dataset.price);
+    const newProduct = new Product(name, price);
+    basket.add(newProduct);
+    createBasketUi();
+
+}
+
+const buyAllProduct = () => {
+    alert(`Twoje zamówienie o wartości ${basket.getTotalValue()}zł zostało złożone. Dziękujemy za skorzystanie z naszych usług. Zapraszamy ponownie!`);
+    basket.clearContents();
+    createBasketUi()
+};
+
+
+for (const btn of buyBtns) {
+    btn.addEventListener('click',addProductToBasket)
+}
+
+buyAllBtn.addEventListener('click', buyAllProduct)
+
+
+
+//basket.js
+
+class Basket {
+    constructor() {this.items = [];}
+    add(item) {this.items.push(item);}
+    getTotalValue(){return Number(this.items.reduce((prev, product) => prev + product.price, 0).toFixed(2));}
+    // getBasketSummary(){
+    //     return this.items
+    //         .map((product, i) => `${i+1} - ${product.name} - ${product.price.toFixed(2)}zł,`)
+    // }
+    getBasketSummary(){
+        return this.items
+            .map((product, i) => {
+                return {
+                    id:i+1,
+                    text:`${i+1} - ${product.name} - ${product.price.toFixed(2)}zł,`
+                };
+            });
+
+    }
+
+
+
+    remove(no){this.items.splice(no-1, 1)};
+
+    clearContents () {
+        //diffrent method
+        // this.items = [];
+        // this.items.splice(0);
+        this.items.length = 0;
+    }
+}
+
+class Product {
+    constructor(productName, productPrice) {
+        this.name = productName;
+        this.price = productPrice;
+    }
+}
+
+
+//adminUI
+
+const addProductForm = document.querySelector('.form-add-product');
+const nameInput = document.querySelector('[name="product-Name"]');
+const priceInput = document.querySelector('[name="product-Price"]');
+const productsUl = document.querySelector('.products-list');
+
+
+const myFunAddProductToShop = event => {
+    event.preventDefault();
+    const name = nameInput.value;
+    const price = Number(priceInput.value);
+    const newLi = document.createElement('li');
+    const newStrong = document.createElement('strong');
+    newStrong.innerText = name;
+    const newPriceText = document.createTextNode(`- ${price.toFixed(2)}zł`);
+
+    const newBtn = document.createElement('button');
+    newBtn.classList.add('buy-btn-product');
+    newBtn.dataset.name = name;
+    newBtn.dataset.price = String(price);
+    newBtn.innerText = "Kup"
+    newBtn.addEventListener('click', addProductToBasket);
+
+    newLi.appendChild(newStrong);
+    newLi.appendChild(newPriceText);
+    newLi.appendChild(newBtn);
+
+
+    productsUl.appendChild(newLi);
+
+    //w tej wersji nie trzeba łapać htmla
+    // console.log(event.target.elements[name="product-Name"].value);
+    // console.log(event.target.elements[name="product-Price"].value);
+
+};
+
+addProductForm.addEventListener('submit', myFunAddProductToShop)
+
+
+//ogolnie robi sie zdarzenie na formularzu a nie na przycisku submit bo domyslnie formularz jest przesylany i zeby zadzialal enter np to sie robi event na formularzu
