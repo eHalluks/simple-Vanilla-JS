@@ -1,0 +1,386 @@
+const _ = require("lodash");
+
+//Funkcje _.first/ _.head zwracają pierwszy element tablicy; funkcja _.last zwraca ostatni element tablicy.
+let words = ['sky', 'wood', 'forest', 'falcon',
+    'pear', 'ocean', 'universe'];
+
+let fel = _.first(words);
+let lel = _.last(words);
+
+console.log(`First element: ${fel}`);
+console.log(`Last element: ${lel}`);
+
+//Funkcja _.nth pobiera element o indeksie n tablicy. Jeśli n jest ujemne, zwracany jest n-ty element od końca.
+let nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+console.log(_.nth(nums, 1));
+console.log(_.nth(nums, -1));
+
+//Funkcja _.chunk tworzy tablicę elementów podzieloną na grupy o określonej długości.
+let nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let c1 = _.chunk(nums1, 2);
+console.log(c1);
+
+let c2 = _.chunk(nums1, 3);
+console.log(c2);
+
+//Metoda _.slice pobiera wycinek z tablicy. Przyjmuje dwa indeksy: początkowy i końcowy, przy czym początkowy indeks jest włączony, a zakończenie jest wyłączne.
+let nums2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let c11 = _.slice(nums2, 2, 6);
+console.log(c11);
+
+let c22 = _.slice(nums2, 0, 8);
+console.log(c22);
+
+//Funkcja _.random generuje losowe wartości między dolną i górną granicą włącznie.
+
+let r = _.random(10);
+console.log(r);
+
+r = _.random(5, 10);
+console.log(r);
+
+//Za pomocą tej _.sample funkcji możemy wybrać losowy element z tablicy.
+let words2 = ['sky', 'wood', 'forest', 'falcon',
+    'pear', 'ocean', 'universe'];
+
+let word = _.sample(words2);
+console.log(word);
+
+//Funkcja _.shuffle tasuje kolekcję.
+let words3 = ['sky', 'wood', 'forest', 'falcon',
+    'pear', 'ocean', 'universe'];
+
+console.log(_.shuffle(words3));
+console.log(words3);
+
+
+//repeatuje zadaną ilość razy
+_.times(4, () => {
+
+    console.log("brave");
+})
+
+
+//funkcja typu async podobna do set time out
+function message()
+{
+    console.log(" Prompt z linijki 70 funkcja async: koniec ostatniego kodu");
+}
+
+_.delay(message, 0);
+console.log("Inna wiadomość");
+
+
+
+
+//to jest spoko opcja do walidacji danych sprawdza co jest co
+let vals = [1, 2, 'good', [1, 2], {name: 'Peter', age: 32}];
+
+vals.forEach( (e) => {
+
+    if (_.isNumber(e)) {
+        console.log(`${e} is a number`);
+    }
+
+    if (_.isString(e)) {
+        console.log(JSON.stringify(e) + ' is a string');
+    }
+
+    if (_.isArray(e)) {
+        console.log(JSON.stringify(e) + ' is an array');
+    }
+
+    if (_.isObject(e)) {
+        console.log(JSON.stringify(e) + ' is an object');
+    }
+
+});
+
+
+//tworzy tablice z liczb z podanych zakresów
+let vals1 = _.range(10);
+console.log(vals1);
+
+let vals2 = _.range(0, 15);
+console.log(vals2);
+
+let vals3 = _.range(0, 15, 5);
+console.log(vals3);
+
+
+//min i max wartosci w tablicy
+let vals4 = [-3, 4, 0, 12, 43, 9, -12];
+
+let min = _.min(vals4);
+console.log(min);
+
+let max = _.max(vals4);
+console.log(max);
+
+max = _.max(_.range(5, 25));
+console.log(max);
+
+let obs = [{n: 12}, {n: -4}, {n: 4}, {n: -11}];
+
+min = _.minBy(obs, 'n');
+console.log(min);
+
+max = _.maxBy(obs, 'n');
+console.log(max);
+
+
+//suma wartosci w tablicy
+let vals5 = [2, 0, 3, 7, 5, 1, 2];
+
+let sum = _.sum(vals5);
+console.log(sum, "to jest suma");
+
+
+// currying w JS
+function multiply(a, b, c) {
+    return a * b * c;
+}
+let curried = _.curry(multiply);
+let ret = curried(2)(3)(12);
+console.log(ret);
+
+//filter
+let nums12 = [4, -5, 3, 2, -1, 7, -6, 8, 9];
+let pos_nums = _.filter(nums12, (e) => e > 0);
+console.log(pos_nums);
+
+
+//find - to moze sie przydac do wyszukiwania
+let users = [
+    { name: 'John', age: 25 },
+    { name: 'Lenny', age: 51 },
+    { name: 'Andrew', age: 43 },
+    { name: 'Peter', age: 81 },
+    { name: 'Anna', age: 43 },
+    { name: 'Albert', age: 76 },
+    { name: 'Adam', age: 47 },
+    { name: 'Robert', age: 72 }
+];
+
+let u1 = _.find(users, {name: 'Adam'});
+console.log(u1);
+
+let u2 = _.find(users, (u) => { return u.age > 60 });
+console.log(u2);
+
+let u3 = _.findLast(users, (u) => { return u.age > 60 });
+console.log(u3);
+
+//usuwanie wszystkich podanych wartosc w parametrze z tablicy
+let nums22 = [1, 2, 3, 1, 2, 2, 4, 5, 7, 8];
+_.pull(nums22, 1, 2);
+console.log(nums22);
+
+
+/*
+Funkcja _.take tworzy wycinek tablicy z n elementami pobranymi od początku.
+Funkcja _.takeRight tworzy wycinek tablicy z n elementami pobranymi od końca.
+ */
+let nums2222 = [1, 2, 3, 4, 5, 6];
+
+let nums22221 = _.take(nums2222);
+let nums3333 = _.take(nums2222, 2);
+let nums4444 = _.takeRight(nums2222, 3)
+
+console.log(nums22221);
+console.log(nums3333);
+console.log(nums4444);
+
+
+/*
+Funkcja _.takeWhile tworzy wycinek tablicy z elementami pobranymi od początku.
+Elementy są pobierane, dopóki dany predykat nie zwróci wartości false.
+W podobny sposób _.takeRightWhile funkcja pobiera elementy od końca.
+*/
+
+let numsZ = [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10]
+
+let nums2244 = _.takeWhile(numsZ, (n) => { return n < 0 });
+let nums3322 = _.takeRightWhile(numsZ, (n) => { return n > 0 });
+
+console.log(nums2244);
+console.log(nums3322);
+
+/*
+Operacja partycji dzieli oryginalną kolekcję na parę tablic.
+Pierwsza tablica zawiera elementy, dla których określony predykat zwraca prawdę,
+podczas gdy druga lista zawiera elementy, dla których predykat zwraca fałsz.
+tu sie dzieje destrukturyzacja jak w przypadku obiektów gdzie pierwsza tablica zawiera
+zdestrukturyzowane elementy otrzymane z funkcji a druga przejmuje pozostalosc po destrukturyzacji
+ */
+
+
+let numery = [4, -5, 3, 2, -1, 7, -6, 8, 9];
+let [numery2, numery3] = _.partition(numery, (e) => e < 0);
+
+console.log(numery2);
+console.log(numery3);
+
+
+//reduce
+let numbersOne = [4, 5, 3, 2, 1, 7, 6, 8, 9];
+
+let sumFish = _.reduce(numbersOne, (total, next) => { return total + next });
+console.log(sumFish);
+
+let colours = ["red", "green", "white", "blue", "black"];
+
+let res = _.reduceRight(colours, (next, total) => { return `${total}-${next}` });
+console.log(res);
+
+
+//Funkcja reduktora może służyć do zliczania występowania elementów w tablicy.
+let wordMe = ['sky', 'forest', 'wood', 'sky', 'rock', 'cloud',
+    'sky', 'forest', 'rock', 'sky'];
+let tally = _.reduce(wordMe, (total, next) => {
+    total[next] = (total[next] || 0) + 1 ;
+    return total;
+}, {});
+console.log(tally);
+
+
+//Poniższy przykład grupuje obiekty w tablicy według właściwości.
+let usersMe = [
+    { name: 'John', age: 25, occupation: 'gardener' },
+    { name: 'Lenny', age: 51, occupation: 'programmer' },
+    { name: 'Andrew', age: 43, occupation: 'teacher' },
+    { name: 'Peter', age: 52, occupation: 'gardener' },
+    { name: 'Anna', age: 43, occupation: 'teacher' },
+    { name: 'Albert', age: 46, occupation: 'programmer' },
+    { name: 'Adam', age: 47, occupation: 'teacher' },
+    { name: 'Robert', age: 32, occupation: 'driver' }
+];
+let grouped = _.reduce(usersMe, (result, user) => {
+    (result[user.occupation] || (result[user.occupation] = [])).push(user);
+    return result;
+}, {});
+console.log(grouped);
+
+
+// W tym przykładzie modyfikujemy wielkość liter za pomocą _.camelCase, _.capitalize, ._kebabCase, _lowerCase i _.upperCase.
+let words231 = ["sky", "Sun", "Blue Island"];
+
+console.log(_.map(words231, _.camelCase));
+console.log(_.map(words231, _.capitalize));
+console.log(_.map(words231, _.kebabCase));
+console.log(_.map(words231, _.lowerCase));
+console.log(_.map(words231, _.upperCase));
+
+
+// Funkcja _.startsWith określa, czy ciąg zaczyna się od określonego ciągu.
+// Funkcja _.endsWith określa, czy ciąg kończy się określonym ciągiem.
+//miedzy innymi mozna sprawdzi czy dane slowo zaczyna sie na jakas litere lub konczy
+
+let slowa = ["tank", "boy", "tourist", "ten",
+    "pen", "car", "marble", "sonnet", "pleasant",
+    "ink", "atom"]
+
+console.log("Starting with 't'");
+slowa.forEach( e => {
+
+    if (_.startsWith(e, 't')) {
+
+        console.log(e);
+    }
+});
+
+console.log("Ending with 'k'");
+slowa.forEach( e => {
+
+    if (_.endsWith(e, 'k')) {
+
+        console.log(e);
+    }
+});
+
+//Ciągi mogą być uzupełnione znakiem, jeśli są krótsze niż określona liczba. Troche to dziala jak powtorzenie
+let liczby = [657, 122, 3245, 345, 99, 18];
+liczby.forEach( e => {
+    console.log(_.padStart(e.toString(), 20, 'N-N# '));
+});
+
+/*
+Ciąg można przyciąć za pomocą funkcji _.trim, _.trimStart i _.trimEnd.
+Domyślnym znakiem do przycięcia jest biały znak.
+Możemy dostarczyć własne postacie do przycięcia.
+ */
+
+let slowa22 = '\tfalcon\t';
+
+let trimmed = _.trim(slowa22);
+console.log(trimmed + 'owl');
+
+let trimmed2 = _.trimStart(slowa22);
+console.log(trimmed2 + 'owl');
+
+let trimmed3 = _.trimEnd(slowa22);
+console.log(trimmed3 + 'owl');
+
+// Funkcja _.trimEnd usuwa białe znaki z końca ciągu.
+
+let slowa111 = ['_falcon', '-owl-', '_-sky-_'];
+let trimcio = _.map(slowa111, (word) => { return _.trim(word, '-_')});
+
+console.log(trimcio);
+
+// Funkcja _.keys zwraca tablicę nazw właściwości obiektu JavaScript, a funkcja _.values tablicę ich wartości.
+
+let p = {age: 24, name: "Rebecca", occupation: "teacher"};
+
+let keys = _.keys(p);
+console.log(keys);
+
+let values = _.values(p);
+console.log(values);
+
+
+
+/*Funkcja _.pick tworzy obiekt złożony z wybranych właściwości obiektu.*/
+
+console.log(_.pick({ name: 'John', age: 25 }, 'name'));
+console.log(_.pick({ name: 'John', age: 25 }, 'age'));
+
+/*
+* Funkcja _.at zwraca wartość w podanej ścieżce obiektu.
+* */
+
+let usery = [
+    { id: 1, name: 'John', about: { 'age': 25, 'colours': ['red', 'green'], } },
+    { id: 2, name: 'Lenny', about: { 'age': 51, 'colours': ['blue'], } },
+    { id: 3, name: 'Andy', about: { 'age': 43, 'colours': ['orange', 'steelblue'], } },
+    { id: 4, name: 'Peter', about: { 'age': 52, 'colours': ['black'], } },
+    { id: 5, name: 'Anna', about: { 'age': 43, 'colours': ['purple'], } },
+];
+
+let name = _.at(usery[2], 'name');
+console.log(name);
+let colour = _.at(usery[0], 'about.colours[0]');
+console.log(colour);
+
+/*
+* Funkcja _.set ustawia wartość na ścieżce obiektu.
+* Jeśli część ścieżki nie istnieje, jest tworzona.
+* Funkcja _.get pobiera wartość ze ścieżki obiektu;
+* jeśli wartość nie istnieje, możemy podać wartość domyślną.
+* */
+
+let data = { user: { name: "John Doe", age: 34, occupation: "gardener"} };
+_.set(data, "user.age", 36);
+console.log(data);
+console.log(_.get(data, "user.name", "unknown"));
+console.log(_.get(data, "user.marital_status", "unknown"));
+
+// Funkcja _.forIn może służyć do iteracji po właściwościach obiektu.
+
+let a = {age: 24, name: "Rebecca", occupation: "teacher"};
+_.forIn(a, (value, key) => {
+    console.log(`${key}: ${value}`);
+});
