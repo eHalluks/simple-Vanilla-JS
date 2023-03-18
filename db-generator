@@ -1,0 +1,100 @@
+const mainArr = [];
+const paymentForm = ['BLIK', 'Przelew tradycyjny', 'Gotówka'];
+const serviceName = ['KF', 'SI', 'DSI', 'TF', 'TSI', 'GKG', 'GK', 'MS', 'TRM'];
+const serviceType = ['Stacjonarna', 'Mobilna', 'Online'];
+const paymentStatus = ['Zapłacone', 'Nie zapłacone'];
+const paybackStatus = ['Nie', 'Tak'];
+const realisationStatus = ['Zr', 'NULL'];
+const maleData = ['Abdon Nowak','Abel Kowalska',
+    'Abelard Wiśniewska',
+    'Abraham Wójcik',
+];
+const femaleData = ['Abigail Nowak',
+    'Ada Kowalski',
+    'Adamina Wiśniewski',
+];
+const tempArr = [];
+
+const randomNumber = (number) => {
+    return Math.floor((Math.random() * number));
+};
+const randomPaymentForm = () => {
+    return paymentForm[randomNumber(3)];
+};
+const randomServiceName = () => {
+    return serviceName[randomNumber(9)];
+};
+const randomServiceType = () => {
+    return serviceType[randomNumber(3)];
+};
+const randomPaymentStatus = () => {
+    return paymentStatus[randomNumber(2)];
+};
+const helperFunction = () => {
+    const value = paybackStatus[randomNumber(2)];
+    if(value === 'Tak'){
+        const los = randomNumber(50);
+        if (los < 10){
+            return tempArr.push('Tak', los + 15, realisationStatus[randomNumber(2)]);
+        }
+        return tempArr.push('Tak', los, realisationStatus[randomNumber(2)]);
+    }else{
+        return tempArr.push('Nie', null);
+    };
+}
+const randomPaybackStatus = () => {
+    helperFunction();
+    if(tempArr[1] === null){
+        return `'${tempArr[0]}', ${0}, NULL`;
+    }else{
+        if(tempArr[2] === ''){
+            return `'${tempArr[0]}', ${tempArr[1]}, 'N/A'`;
+        }else {
+            return `'${tempArr[0]}', ${tempArr[1]}, '${tempArr[2]}'`;
+        }
+    };
+};
+const randomMaleData = () => {
+    return maleData[randomNumber(553)];
+};
+const randomFemaleData = () => {
+    return femaleData[randomNumber(562)]
+};
+const randomPriceValue = () => {
+    let valueMe = randomNumber(350);
+    if(valueMe < 100){
+        return valueMe + randomNumber(250);
+    }else if(valueMe >= 100 && valueMe <= 150){
+        return valueMe + randomNumber(200);
+    };
+    return valueMe;
+}
+const generateDate = () => {
+        const day = randomNumber(28);
+        if(day === 0){
+            return `'2023-01-01'`;
+        }else if(day < 10){
+            return `'2023-01-0${day}'`;
+        }
+        return `'2023-01-${day}'`;
+};
+const addMale = () => {
+    mainArr.push(`(${generateDate()}, '${randomMaleData()}', '${randomServiceName()}', '${randomServiceType()}', ${randomPriceValue()}, '${randomPaymentForm()}', '${randomPaymentStatus()}', ${randomPaybackStatus()}),`)
+};
+const addFemale = () => {
+    mainArr.push(`(${generateDate()}, '${randomFemaleData()}', '${randomServiceName()}', '${randomServiceType()}', ${randomPriceValue()}, '${randomPaymentForm()}', '${randomPaymentStatus()}', ${randomPaybackStatus()}),`)
+}
+
+for(let i=0; i<=450; i++){
+    if(i % 2 === 0){
+        addMale();
+        tempArr.length=0;
+    }else{
+        addFemale();
+        tempArr.length=0;
+    };
+};
+
+mainArr.forEach(element => {
+    console.log(element);
+});
